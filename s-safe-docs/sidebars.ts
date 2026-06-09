@@ -1,25 +1,34 @@
 import type { SidebarsConfig } from '@docusaurus/plugin-content-docs';
 
+// MẸO TỐI ƯU: Tự động bắt mạch xem Docusaurus đang build cho ngôn ngữ nào (en hay vi)
+const currentLocale = process.env.DOCUSAURUS_CURRENT_LOCALE || 'vi';
+
 const sidebars: SidebarsConfig = {
   tutorialSidebar: [
 
     // ==========================================
-    // NHÓM 1: GETTING STARTED
+    // NHÓM 1: CẤU HÌNH HỆ THỐNG / SYSTEM SETUP
     // ==========================================
     {
       type: 'html',
-      value: '<span class="sidebar-divider">Cấu hình hệ thống</span>',
+      // Nếu là tiếng Anh (en) thì hiện "System Setup", ngược lại hiện "Cấu hình hệ thống"
+      value: currentLocale === 'en'
+        ? '<span class="sidebar-divider">System Setup</span>'
+        : '<span class="sidebar-divider">Cấu hình hệ thống</span>',
       defaultStyle: true,
     },
     'system-requirements',
     'installation',
 
     // ==========================================
-    // NHÓM 2: USER GUIDE
+    // NHÓM 2: HƯỚNG DẪN SỬ DỤNG / USER GUIDE
     // ==========================================
     {
       type: 'html',
-      value: '<span class="sidebar-divider">Hướng dẫn sử dụng</span>',
+      // Nếu là tiếng Anh (en) thì hiện "User Guide", ngược lại hiện "Hướng dẫn sử dụng"
+      value: currentLocale === 'en'
+        ? '<span class="sidebar-divider">User Guide</span>'
+        : '<span class="sidebar-divider">Hướng dẫn sử dụng</span>',
       defaultStyle: true,
     },
     'huong-dan-su-dung/trang-chu',
