@@ -6,5 +6,11 @@
   "sidebar.tutorialSidebar.category.Module chức năng": {
     "message": "Feature Modules",
     "description": "The label for category 'Module chức năng' in sidebar 'tutorialSidebar'"
+  },
+  "<span class=\"sidebar-divider\">Cấu hình hệ thống</span>": {
+    "message": "<span class=\"sidebar-divider\">System Setup</span>"
+  },
+  "<span class=\"sidebar-divider\">Hướng dẫn sử dụng</span>": {
+    "message": "<span class=\"sidebar-divider\">User Guide</span>"
   }
 }
