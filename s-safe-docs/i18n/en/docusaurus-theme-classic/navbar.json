@@ -1,0 +1,10 @@
+{
+  "title": {
+    "message": "S-Safe Documentation",
+    "description": "The title in the navbar"
+  },
+  "logo.alt": {
+    "message": "S-Safe Logo",
+    "description": "The alt text of navbar logo"
+  }
+}

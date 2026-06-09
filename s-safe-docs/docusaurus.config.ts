@@ -5,26 +5,23 @@ import type * as Preset from '@docusaurus/preset-classic';
 const config: Config = {
   title: 'S-Safe Documentation',
   tagline: 'Tài liệu hướng dẫn hệ thống S-Safe',
-  favicon: 'img/favicon.ico',
+  favicon: 'img/S-Safe_logo.png', // Đã đổi sang favicon mới của công ty
 
   url: 'https://your-docusaurus-site.example.com',
   baseUrl: '/',
 
-  organizationName: 'facebook',
-  projectName: 'docusaurus',
+  organizationName: 'SMT',
+  projectName: 's-safe-docs',
 
   onBrokenLinks: 'warn',
 
+  // Cấu hình ngôn ngữ
   i18n: {
     defaultLocale: 'vi',
     locales: ['vi', 'en'],
     localeConfigs: {
-      vi: {
-        label: 'Tiếng Việt',
-      },
-      en: {
-        label: 'English',
-      },
+      vi: { label: 'Tiếng Việt' },
+      en: { label: 'English' },
     },
   },
 
@@ -33,26 +30,27 @@ const config: Config = {
       'classic',
       {
         docs: {
+          routeBasePath: '/',
           sidebarPath: './sidebars.ts',
-          editUrl:
-            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
         },
-        blog: {
-          showReadingTime: true,
-          feedOptions: {
-            type: ['rss', 'atom'],
-            xslt: true,
-          },
-          editUrl:
-            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
-          onInlineTags: 'warn',
-          onInlineAuthors: 'warn',
-          onUntruncatedBlogPosts: 'warn',
-        },
+        blog: false,
         theme: {
           customCss: './src/css/custom.css',
         },
       } satisfies Preset.Options,
+    ],
+  ],
+
+  // TÍCH HỢP THANH TÌM KIẾM OFFLINE TẠI ĐÂY
+  themes: [
+    [
+      require.resolve("@easyops-cn/docusaurus-search-local"),
+      {
+        hashed: true,
+        language: ["vi", "en"],
+        docsRouteBasePath: "/",
+        highlightSearchTermsOnTargetPage: true,
+      },
     ],
   ],
 
@@ -61,72 +59,22 @@ const config: Config = {
     colorMode: {
       respectPrefersColorScheme: true,
     },
+
+    // THANH MENU TRÊN CÙNG (NAVBAR)
     navbar: {
-      title: 'My Site',
+      title: 'S-Safe Documentation', // Tên hiển thị
       logo: {
-        alt: 'My Site Logo',
-        src: 'img/logo.svg',
+        alt: 'S-Safe Logo',
+        src: 'img/S-Safe_logo.png', // Tên file logo chính thức của bác
       },
       items: [
         {
-          type: 'docSidebar',
-          sidebarId: 'tutorialSidebar',
-          position: 'left',
-          label: 'Tutorial',
-        },
-        { to: '/blog', label: 'Blog', position: 'left' },
-        {
-          href: 'https://github.com/facebook/docusaurus',
-          label: 'GitHub',
+          type: 'localeDropdown', // Nút chuyển Tiếng Việt / Tiếng Anh
           position: 'right',
         },
       ],
     },
-    footer: {
-      style: 'dark',
-      links: [
-        {
-          title: 'Docs',
-          items: [
-            {
-              label: 'Tutorial',
-              to: '/docs/3-huong-dan-su-dung/1-tong-quan',
-            },
-          ],
-        },
-        {
-          title: 'Community',
-          items: [
-            {
-              label: 'Stack Overflow',
-              href: 'https://stackoverflow.com/questions/tagged/docusaurus',
-            },
-            {
-              label: 'Discord',
-              href: 'https://discordapp.com/invite/docusaurus',
-            },
-            {
-              label: 'X',
-              href: 'https://x.com/docusaurus',
-            },
-          ],
-        },
-        {
-          title: 'More',
-          items: [
-            {
-              label: 'Blog',
-              to: '/blog',
-            },
-            {
-              label: 'GitHub',
-              href: 'https://github.com/facebook/docusaurus',
-            },
-          ],
-        },
-      ],
-      copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
-    },
+
     prism: {
       theme: prismThemes.github,
       darkTheme: prismThemes.dracula,

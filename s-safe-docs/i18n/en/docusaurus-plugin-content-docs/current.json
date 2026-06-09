@@ -1,0 +1,10 @@
+{
+  "version.label": {
+    "message": "Next",
+    "description": "The label for version current"
+  },
+  "sidebar.tutorialSidebar.category.Module chức năng": {
+    "message": "Feature Modules",
+    "description": "The label for category 'Module chức năng' in sidebar 'tutorialSidebar'"
+  }
+}
