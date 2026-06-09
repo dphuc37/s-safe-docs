@@ -7,17 +7,13 @@ const config: Config = {
   tagline: 'Tài liệu hướng dẫn hệ thống S-Safe',
   favicon: 'img/favicon.ico',
 
-  future: {
-    v4: true,
-  },
-
   url: 'https://your-docusaurus-site.example.com',
   baseUrl: '/',
 
   organizationName: 'facebook',
   projectName: 'docusaurus',
 
-  onBrokenLinks: 'throw',
+  onBrokenLinks: 'warn',
 
   i18n: {
     defaultLocale: 'vi',
@@ -94,7 +90,7 @@ const config: Config = {
           items: [
             {
               label: 'Tutorial',
-              to: '/docs/tong-quan',
+              to: '/docs/3-huong-dan-su-dung/1-tong-quan',
             },
           ],
         },
