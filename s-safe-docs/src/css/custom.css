@@ -47,6 +47,88 @@
   }
 }
 
+/* ======================================================== */
+/* CUSTOM: ĐỔI MÀU NỀN THANH SEARCH ĐỘC LẬP VỚI NAVBAR      */
+/* ======================================================== */
+
+/* 1. Ép nền thanh Search thành màu TRẮNG trong giao diện Sáng */
+html[data-theme='light'] .navbar__search input {
+  background-color: #ffffff !important;
+  border: 1px solid #d1d5db !important;
+  /* Thêm cái viền mỏng cho nó nét */
+}
+
+/* 2. Ép nền thanh Search thành màu XÁM ĐẬM trong giao diện Tối */
+html[data-theme='dark'] .navbar__search input {
+  background-color: #2b2d31 !important;
+  border: 1px solid #404249 !important;
+}
+
+/* Khi click vào ô Search, nó sáng lên một chút */
+html[data-theme='light'] .navbar__search input:focus {
+  background-color: #ffffff !important;
+  box-shadow: 0 0 0 2px var(--ifm-color-primary) !important;
+}
+
+html[data-theme='dark'] .navbar__search input:focus {
+  background-color: #383a40 !important;
+  box-shadow: 0 0 0 2px var(--ifm-color-primary) !important;
+}
+
+/* ======================================================== */
+/* CUSTOM: MÀU NỀN NAVBAR & SIDEBAR                         */
+/* ======================================================== */
+
+/* 1. Đổi màu nền Navbar (Thanh menu trên cùng) */
+:root {
+  --ifm-navbar-background-color: #f3f5f9 !important;
+  /* Xám xanh nhạt */
+}
+
+[data-theme='dark'] {
+  --ifm-navbar-background-color: #1a1b1e !important;
+  /* Màu cho Darkmode */
+}
+
+/* 2. Đổi màu nền Sidebar (Thanh menu bên trái) */
+.theme-doc-sidebar-container {
+  background-color: #f3f5f9 !important;
+  border-right: 1px solid #e5e7eb;
+  /* Thêm đường kẻ chỉ mỏng ngăn cách với nội dung */
+}
+
+[data-theme='dark'] .theme-doc-sidebar-container {
+  background-color: #1a1b1e !important;
+  border-right: 1px solid #2d2d2d;
+}
+
+/* ======================================================== */
+/* TRANG TRÍ TIÊU ĐỀ PHÂN NHÓM SIDEBAR (SỬA ĐỔI THEO YÊU CẦU)*/
+/* ======================================================== */
+
+/* 1. Xóa bỏ khoảng cách mặc định của khung bọc ngoài Docusaurus để ép sát lề */
+.theme-doc-sidebar-item-html {
+  padding-left: 0 !important;
+  margin-left: 0 !important;
+}
+
+/* 2. Cấu hình lại kiểu chữ cho Tiêu đề phân nhóm */
+.sidebar-divider {
+  font-size: 0.75rem !important;
+  /* CHỖ CHỈNH CHỮ NHỎ: Giảm từ 0.85rem xuống 0.75rem (hoặc 11px) */
+  font-weight: 700 !important;
+  /* Độ đậm của chữ, giữ nguyên cho rõ ràng */
+  color: #64748b !important;
+  /* Màu xám nhã nhặn */
+
+  text-transform: none !important;
+  /* CHỖ BỎ VIẾT HOA: Đổi từ uppercase thành none */
+
+  padding: 10px 0px 0px 0px !important;
+  display: block !important;
+  letter-spacing: 0.5px !important;
+}
+
 /* =======================================================
    CẤU HÌNH GIAO DIỆN MENU VÀ ICON BẰNG MÃ SVG NGUYÊN CHẤT
    ======================================================= */
