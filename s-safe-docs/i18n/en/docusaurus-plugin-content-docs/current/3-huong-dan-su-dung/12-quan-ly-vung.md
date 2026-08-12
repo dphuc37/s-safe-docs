@@ -32,10 +32,33 @@ The E-Map interface is designed for optimal use of space and is divided into 3 m
 The system supports an intelligent context menu (Right-click) directly on the folder tree:
 
 * **Right-click on empty space:** Quickly create a brand new Zone.
+
+![Treeview Context Menu](/img/area-1.png)
+
 * **Right-click on a specific Zone:** Displays a function menu to **Add Sub-Zone**, **Assign Camera**, **Assign Door**, **Assign Alarm**, or **Edit/Delete** the zone.
-* **Right-click on a Device (Door/Camera/Alarm):** Allows quick execution of hardware commands (e.g., Unlock Door).
 
 ![Treeview Context Menu](/img/area-treeview.png)
+
+* **Right-Click Actions on Devices:**
+  Right-clicking a device object in the list displays a quick-action menu specific to the device type:
+  * **For Doors:**
+    * **Open Door:** Immediately triggers a remote command to open the door without requiring a card swipe.
+    * **Edit:** Opens the configuration dialog to modify door details.
+    * **Delete (Red):** Removes the door from the management list and the map.
+
+![Treeview Context Menu](/img/area-2.png)
+
+* **For Cameras:**
+    * **Edit:** Open the configuration dialog to edit the camera.
+    * **Delete (Red):** Remove the camera from the map system.
+
+![Treeview Context Menu](/img/area-3.png)
+
+* **For Alarms:**
+    * **Edit:** Change the icon for the alert displayed on the map.
+    * **Delete (Red):** Remove the alarm from the map system.
+
+![Treeview Context Menu](/img/area-4.png)
 
 ---
 

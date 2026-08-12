@@ -32,10 +32,33 @@ Giao diện E-Map được thiết kế tối ưu hóa không gian, chia làm 3 
 Hệ thống hỗ trợ Menu ngữ cảnh (Click chuột phải) thông minh ngay trên cây thư mục:
 
 * **Chuột phải vào khoảng trống:** Tạo nhanh một Vùng mới hoàn toàn.
+
+![Menu thao tác trên Cây thư mục](/img/area-1.png)
+
 * **Chuột phải vào một Vùng cụ thể:** Hiển thị menu chức năng để **Thêm vùng con**, **Gán Camera**, **Gán Cửa**, **Gán Báo động**, hoặc **Sửa/Xóa** vùng đó.
-* **Chuột phải vào Thiết bị (Cửa/Camera/Báo động):** Cho phép thao tác nhanh lệnh phần cứng (Ví dụ: Mở cửa).
 
 ![Menu thao tác trên Cây thư mục](/img/area-treeview.png)
+
+* **Thao tác Chuột phải vào Thiết bị:**
+  Khi nhấp chuột phải vào một đối tượng thiết bị trong danh sách, hệ thống sẽ hiển thị menu thao tác nhanh tương ứng với từng loại:
+  * **Đối với Cửa:** 
+    * **Mở cửa:** Kích hoạt lệnh điều khiển mở cửa từ xa ngay lập tức mà không cần quẹt thẻ.
+    * **Sửa:** Mở hộp thoại cấu hình để chỉnh sửa thông tin cửa.
+    * **Xóa (Màu đỏ):** Loại bỏ cửa khỏi danh sách quản lý và bản đồ.
+
+    ![Menu thao tác trên Cây thư mục](/img/area-2.png)
+
+  * **Đối với Camera:** 
+    * **Sửa:** Mở hộp thoại cấu hình để chỉnh sửa camera.
+    * **Xóa (Màu đỏ):** Gỡ bỏ camera khỏi hệ thống bản đồ.
+
+    ![Menu thao tác trên Cây thư mục](/img/area-3.png)
+
+  * **Đối với Báo động:** 
+    * **Sửa:** Thay đổi biểu tượng (icon) cho cảnh báo hiển thị trên bản đồ.
+    * **Xóa (Màu đỏ):** Gỡ bỏ báo động khỏi hệ thống bản đồ.
+
+    ![Menu thao tác trên Cây thư mục](/img/area-4.png)
 
 ---
 
