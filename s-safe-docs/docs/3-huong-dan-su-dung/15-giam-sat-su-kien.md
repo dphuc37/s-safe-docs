@@ -14,13 +14,16 @@ Module **Giám sát sự kiện** là trung tâm điều hành và giám sát an
 
 Khu vực phía trên là bảng hiển thị danh sách các sự kiện được đẩy về liên tục từ các bộ điều khiển cửa mà không cần tải lại trang (Auto-refresh):
 
-* **Sự kiện:** Phân loại mã định danh sự kiện (Ví dụ: *TypeCardID* - Quẹt thẻ xác thực).
-* **Thời gian:** Mốc thời gian chính xác đến từng giây khi sự kiện xảy ra tại thực địa.
-* **Nguồn:** Tên thiết bị hoặc Cửa phát sinh sự kiện (Ví dụ: *Main Door CR1*).
-* **Mô tả:** Trạng thái chi tiết của lượt truy cập (Ví dụ: *Request granted: full test, used* - Quyền truy cập được chấp thuận).
-* **Tên:** Họ tên nhân sự quẹt thẻ (nếu hệ thống đối chiếu thành công).
-* **Ảnh đại diện:** Ảnh gốc trong hồ sơ của nhân viên để bảo vệ so sánh trực tiếp với người đang đứng trước camera.
-* **Trạng thái:** Tín hiệu cảnh báo hoặc trạng thái logic đi kèm.
+* **Nhân sự:** Hiển thị ảnh đại diện (Avatar) kèm theo họ tên nhân viên (Ví dụ: *Nguyễn Văn A, Trần Thị B*) hoặc hiển thị *Khách Vãng Lai* đối với các đối tượng chưa định danh.
+* **Vị trí (Nguồn):** Vị trí cửa hoặc thiết bị phát sinh sự kiện (Ví dụ: *Cửa Hầm, Cửa Kho, Cửa Chính*).
+* **Sự kiện:** Loại sự kiện ghi nhận trên hệ thống (Ví dụ: *Từ chối thẻ, Trạng thái cửa, Sự kiện hệ thống*).
+* **Chi tiết:** Mô tả diễn giải cụ thể lý do hoặc trạng thái (Ví dụ: *Từ chối truy cập: Thẻ chưa được đăng ký trong hệ thống*, *Cửa mất kết nối*, *System rebooted unexpectedly*).
+* **Thời gian:** Mốc thời gian chính xác (Năm-Tháng-Ngày Giờ:Phút:Giây) khi sự kiện xảy ra tại thực địa.
+* **Trạng thái:** Tín hiệu cảnh báo đi kèm (Ví dụ: Badge màu đỏ **ALERT** đối với các sự kiện từ chối truy cập hoặc cảnh báo nguy hiểm).
+
+> **Các nút thao tác nhanh (Góc trên bên phải):**
+> * **Test Event (Xanh lá):** Tạo sự kiện giả lập để kiểm tra đường truyền và phản hồi của hệ thống.
+> * **Export (Màu cam):** Xuất danh sách nhật ký sự kiện hiện tại ra file dữ liệu.
 
 ![Giao diện Giám sát sự kiện trực tuyến](/img/event.png)
 

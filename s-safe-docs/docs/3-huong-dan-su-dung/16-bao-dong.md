@@ -10,13 +10,13 @@ sidebar_position: 16
 
 Module **Báo động (Alarms)** là nơi bạn định nghĩa các rủi ro an ninh, phân loại mức độ nghiêm trọng và thiết lập Quy trình xử lý tiêu chuẩn (SOP - Standard Operating Procedure) cho nhân viên trực ban khi sự cố xảy ra (Ví dụ: Cửa mở quá lâu, Cạy cửa, Cháy nổ...).
 
-## 1. Ma trận liên kết: Alarm - Automation - Alert
+## 1. Ma trận liên kết: Alarm - Automation - Warning
 
 Trong hệ thống S-Safe, **Báo động** không hoạt động độc lập mà là một mắt xích trung tâm trong chuỗi phản ứng an ninh 3 bước:
 
 1. **Automation (Nguyên nhân / Logic):** Là "Bộ não" phát hiện sự cố. Automation chứa các quy tắc logic (NẾU - THÌ). *Ví dụ: NẾU phát hiện cửa bị cạy mở, THÌ kích hoạt Báo động "Cạy cửa".*
 2. **Alarm (Bản chất sự cố / Xử lý):** Là "Trái tim" của sự kiện. Module này định nghĩa sự cố đó nguy hiểm ở mức nào (Cấp 1/2/3) và bảo vệ phải làm các bước gì (SOP) để khắc phục sự cố đó khi nhìn thấy trên màn hình.
-3. **Alert (Thông báo / Lan truyền):** Là "Cái loa" của hệ thống. Nó lấy thông tin từ Báo động (Alarm) để phát đi thông báo ra bên ngoài (Gửi Email cho Giám đốc, đẩy thông báo Push lên điện thoại, SMS...).
+3. **Warning (Thông báo / Lan truyền):** Là "Cái loa" của hệ thống. Nó lấy thông tin từ Báo động (Alarm) để phát đi thông báo ra bên ngoài (Gửi Email cho Giám đốc, đẩy thông báo Push lên điện thoại, SMS...).
 
 ---
 
@@ -43,6 +43,9 @@ Công tắc bật/tắt (Active/Inactive) góc phải trên cùng cho phép bạ
   * **Cấp 2 - Cảnh cáo (Cam):** Cần lưu tâm xử lý nhanh (Cửa mở quá lâu).
   * **Cấp 3 - Chú ý (Xanh):** Theo dõi thêm (Mất kết nối thiết bị phụ).
 * **Quy trình xử lý (SOP):** Bạn có thể gõ thủ công từng bước hướng dẫn, hoặc nhấn vào **Chọn mẫu có sẵn** để thêm nhanh các quy trình chuẩn (Ví dụ: *Gọi điện cho Trưởng ca trực, Khóa toàn bộ cửa ra vào, Kiểm tra camera...*). Các bước này sẽ hiển thị lên màn hình của bảo vệ để họ làm theo tác vụ (Checklist) khi sự cố bùng phát.
+
+### Camera giám sát
+Bạn có thể chọn các camera được kết nối với hệ thống để theo dõi diễn biến sự cố. Camera được chọn sẽ tự động hiển thị trên màn hình khi báo động được kích hoạt.
 
 ### Automation đã gán
 Khu vực này liệt kê danh sách các Quy tắc Tự động hóa (Automations) đang được liên kết để "kích nổ" báo động này. Bạn có thể nhìn vào đây để biết chính xác phần cứng hay cảm biến nào đang được dùng để theo dõi sự cố (Ví dụ: *[#0002] NẾU Geofence intrusion THÌ Trigger Alarm...*).

@@ -17,7 +17,7 @@ On the main screen of the **Controller** module, the system displays a listview 
 The monitoring interface immediately provides key real-time status parameters to help operators assess the network at a glance:
 * **Basic Information:** ID, Controller type (e.g., X1100), Device name, and IP address.
 * **Hardware Status:**
-  * *Connection Status:* Displays whether the device is online or offline.
+  * *Connection Status:* Displays whether the device is Connected or Disconnected.
   * *Tamper:* Triggers an alert if the device enclosure has been forced open.
   * *AC Power / BATT:* Status of the mains power supply and backup battery level.
 
@@ -31,14 +31,21 @@ The monitoring interface immediately provides key real-time status parameters to
 To register a new controller into the system, follow these steps:
 
 1. Click the **+ Add New** button (blue) in the top-right corner of the screen.
-2. The **Access Controller** form will appear. Fill in all the required technical parameters for the device:
-   * **Identification Info:** Select the *Controller type* (e.g., X1100), enter the *Controller Name* (required), and the *Serial Number*.
-   * **Network & Account Settings:** Enter the exact *IP Address* of the hardware, along with the *Username* and *Password* to grant the software access to the device.
-   * **Physical Port Configuration:** Declare the number of *Inputs*, *Outputs*, and *Readers* that the device physically supports.
-   * **Extended Configuration:** Declare the *Parent Controller*, *SIO Address* (applicable for expansion modules X100, X200, X300), and the *RS485 Port*.
-3. Review the information and click **Save** (green) to complete. The new device will immediately appear in the list.
+2. The **Access Controller** interface appears, featuring two main configuration tabs:
+   * **General Information Tab:**
+     * **Identification Info:** Select the *Controller* type (e.g., X1100), and enter the *Controller Name* (Required) and *Serial Number*.
+     * **Network & Account Parameters:** Enter the hardware's *IP Address* accurately, along with the *Username* and *Password* to grant the software access to the device.
+     * **Extended Configuration:** Specify the *Parent Controller*, *SIO Address* (applicable to X100, X200, and X300 expansion modules), and the *RS485 Port*.
+   * **I/O Devices Tab (Input/Output & Reader Configuration):**
+     * **General Parameter Setup:** Specify the quantities for **Number of Readers**, **Number of Inputs**, and **Number of Outputs**, as well as the **LED Mode** (e.g., *R/G + separate buzzer*).
+     * **Readers:** Configure the authentication method for each reader (e.g., select *CardOnly* for *Reader 1* and *Reader 2*).
+     * **Inputs:** Set the signal state (*Active*, *NormallyOpen* / *NormallyClosed*) and assign a function to each input port (e.g., *DoorSensor*).
+     * **Outputs:** Configure the control function for each output port (e.g., *DoorStrike*).
+3. Click **Check Connection** (blue) in the bottom-left corner to test the connection to the device.
+4. Review the information and click the **Save** button (green) to complete the process. The new device will immediately appear in the list. To cancel the operation, click **Cancel** (red).
 
 ![Add/Edit Controller Interface](/img/controller-details.png)
+![Add/Edit Controller Interface](/img/controller-details-1.png)
 
 :::info[Device Deployment Tips]
 Ensure that the server running S-Safe and the physical Controllers are on the same network (able to ping the device IP) before registering them in the software, so that the connection status is displayed accurately.

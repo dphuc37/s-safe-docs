@@ -16,7 +16,7 @@ Tại màn hình chính của module **Bộ điều khiển**, hệ thống hi�
 
 Giao diện giám sát cung cấp ngay lập tức các thông số quan trọng (Real-time status) để người vận hành nắm bắt tình hình mạng lưới:
 * **Thông tin cơ bản:** ID, Loại bộ điều khiển (Ví dụ: X1100), Tên thiết bị và Địa chỉ IP.
-* **Trạng thái phần cứng:** * *Trạng thái kết nối:* Hiển thị thiết bị đang online hay offline.
+* **Trạng thái phần cứng:** * *Trạng thái kết nối:* Hiển thị thiết bị đang Connected hay Disconnected.
   * *Tamper:* Cảnh báo nếu vỏ hộp thiết bị bị cạy phá.
   * *AC Power / BATT:* Trạng thái nguồn điện lưới và dung lượng Pin dự phòng.
 
@@ -30,14 +30,21 @@ Giao diện giám sát cung cấp ngay lập tức các thông số quan trọng
 Để khai báo một bộ điều khiển mới vào hệ thống, bạn thực hiện theo các bước sau:
 
 1. Nhấn vào nút **+ Thêm mới** (Màu xanh dương) ở góc trên cùng bên phải màn hình.
-2. Giao diện **Bộ điều khiển truy cập** sẽ xuất hiện. Bạn cần điền đầy đủ các thông số kỹ thuật cho thiết bị:
-   * **Thông tin định danh:** Chọn loại *Bộ điều khiển* (VD: X1100), nhập *Tên bộ điều khiển* (Bắt buộc) và *Số sê-ri*.
-   * **Thông số mạng & Tài khoản:** Nhập chính xác *Địa chỉ IP* của phần cứng, kèm theo *Tên đăng nhập* và *Mật khẩu* để phần mềm có quyền truy cập vào thiết bị.
-   * **Thông số ngõ vật lý:** Khai báo số lượng *Ngõ vào (Input)*, *Ngõ ra (Output)* và *Số đầu đọc (Reader)* thực tế mà thiết bị hỗ trợ.
-   * **Cấu hình mở rộng:** Khai báo *Bộ điều khiển gốc*, *Địa chỉ Sio* (áp dụng cho các bộ mở rộng X100, X200, X300) và cổng *RS485 Port*.
-3. Kiểm tra lại thông tin và bấm nút **Lưu** (Màu xanh lá) để hoàn tất. Thiết bị mới sẽ ngay lập tức xuất hiện trên bảng danh sách.
+2. Giao diện **Bộ điều khiển truy cập** xuất hiện, bao gồm 2 thẻ (tab) cấu hình chính:
+   * **Thẻ Thông tin chung:**
+     * **Thông tin định danh:** Chọn loại *Bộ điều khiển* (VD: X1100), nhập *Tên bộ điều khiển* (Bắt buộc) và *Số sê-ri*.
+     * **Thông số mạng & Tài khoản:** Nhập chính xác *Địa chỉ IP* của phần cứng, kèm theo *Tên đăng nhập* và *Mật khẩu* để phần mềm có quyền truy cập vào thiết bị.
+     * **Cấu hình mở rộng:** Khai báo *Bộ điều khiển gốc*, *Địa chỉ Sio* (áp dụng cho các bộ mở rộng X100, X200, X300) và cổng *RS485 Port*.
+   * **Thẻ I/O Devices (Cấu hình ngõ vào/ngõ ra & Đầu đọc):**
+     * **Thiết lập thông số chung:** Khai báo số lượng cho **Số đầu đọc**, **Số ngõ vào**, **Số ngõ ra** và **Chế độ LED** (VD: *R/G + còi riêng*).
+     * **Đầu đọc:** Cấu hình phương thức xác thực cho từng đầu đọc (VD: *Reader 1, Reader 2* chọn *CardOnly*).
+     * **Ngõ vào (Input):** Thiết lập trạng thái tín hiệu (*Active*, *NormallyOpen* / *NormallyClosed*) và gán chức năng cho từng cổng ngõ vào (VD: *DoorSensor*).
+     * **Ngõ ra (Output):** Cấu hình chức năng điều khiển cho từng cổng ngõ ra (VD: *DoorStrike*).
+3. Nhấn **Kiểm tra kết nối** (Màu xanh dương) ở góc dưới bên trái để kiểm tra đường truyền tới thiết bị.
+4. Kiểm tra lại thông tin và bấm nút **Lưu** (Màu xanh lá) để hoàn tất. Thiết bị mới sẽ ngay lập tức xuất hiện trên bảng danh sách. Nếu muốn hủy bỏ thao tác, nhấn **Hủy** (Màu đỏ).
 
 ![Giao diện Thêm mới và Chỉnh sửa Controller](/img/controller-details.png)
+![Giao diện Thêm mới và Chỉnh sửa Controller](/img/controller-details-1.png)
 
 :::info[Mẹo triển khai thiết bị]
 Đảm bảo máy chủ cài đặt phần mềm S-Safe và các Bộ điều khiển vật lý phải thông mạng với nhau (có thể Ping thấy IP của thiết bị) trước khi khai báo trên phần mềm để trạng thái kết nối hiển thị chính xác.

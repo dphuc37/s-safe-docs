@@ -14,10 +14,11 @@ Module **Nhóm dùng thẻ** giúp người quản trị gom cụm các nhân s�
 
 Màn hình hiển thị danh sách toàn bộ các nhóm dùng thẻ hiện có trong hệ thống dưới dạng bảng dữ liệu trực quan bao gồm 4 cột thông tin chính:
 
-1. **STT:** Số thứ tự sắp xếp của nhóm.
-2. **Tên nhóm:** Tên định danh của nhóm người dùng thẻ (Ví dụ: *Ban Giám Đốc, Phòng Nhân Sự*).
-3. **Số lượng người trong nhóm:** Tổng số lượng nhân sự đã được gán vào nhóm này. Bác có thể nhìn vào đây để kiểm tra nhanh biến động quân số của từng nhóm.
-4. **Thao tác:** Chứa nút **Edit** 📝 (Chỉnh sửa) và **Delete** 🗑️ (Xóa nhóm).
+1. **Thao tác:** Chứa nút **Edit** 📝 (Chỉnh sửa) và **Delete** 🗑️ (Xóa nhóm).
+2. **STT:** Số thứ tự sắp xếp của nhóm.
+3. **Tên nhóm:** Tên định danh của nhóm người dùng thẻ (Ví dụ: *Ban Giám Đốc, Phòng Nhân Sự*).
+4. **Số lượng người trong nhóm:** Tổng số lượng nhân sự đã được gán vào nhóm này. Bác có thể nhìn vào đây để kiểm tra nhanh biến động quân số của từng nhóm.
+5. **Lịch đã gán:** Danh sách các lịch đã được gán cho nhóm.
 
 ![Giao diện chính Quản lý Nhóm dùng thẻ](/img/cardholder-group-listview.png)
 
@@ -31,6 +32,10 @@ Khi nhấn vào nút **+ Thêm mới** ➕ hoặc nút **Edit** 📝, một hộ
 * **Không gian phân bổ thành viên:** Chia làm 2 cột danh sách đối ứng phía dưới:
   * **Cột Chưa gán (Phía trái):** Hiển thị toàn bộ danh sách nhân sự hiện có trong hệ thống S-Safe nhưng chưa thuộc về nhóm này.
   * **Cột Đã gán (Phía phải):** Danh sách các nhân sự chính thức là thành viên của nhóm.
+
+* **Không gian phân bổ lịch truy cập:**
+  * **Cột Chưa gán (Phía trái):** Hiển thị danh sách các khung giờ/lịch truy cập khả dụng chưa áp dụng cho nhóm.
+  * **Cột Đã gán (Phía phải):** Các khung giờ/lịch truy cập đang được áp dụng cho nhóm.
 
 ### Thao tác điều hướng nhân sự bằng nút bấm nhanh:
 * **Nút `>>`:** Chuyển nhanh toàn bộ hoặc các nhân sự được chọn từ cột *Chưa gán* sang cột *Đã gán* để kết nạp vào nhóm.

@@ -36,6 +36,7 @@ const sidebars: SidebarsConfig = {
     'huong-dan-su-dung/quan-ly-cua',
     'huong-dan-su-dung/quan-ly-camera',
     'huong-dan-su-dung/quan-ly-thang-may',
+    'huong-dan-su-dung/quan-ly-tai-khoan',
     'huong-dan-su-dung/nguoi-dung-the',
     'huong-dan-su-dung/nhom-dung-the',
     'huong-dan-su-dung/quan-ly-khach-vang-lai',
@@ -44,12 +45,12 @@ const sidebars: SidebarsConfig = {
     'huong-dan-su-dung/quan-ly-vung',
     'huong-dan-su-dung/cham-cong',
     'huong-dan-su-dung/bao-cao',
+    'huong-dan-su-dung/audit-trail',
     'huong-dan-su-dung/giam-sat-su-kien',
     'huong-dan-su-dung/bao-dong',
+    'huong-dan-su-dung/hang-rao-dien-tu',
     'huong-dan-su-dung/tu-dong-hoa',
     'huong-dan-su-dung/canh-bao',
-    'huong-dan-su-dung/hang-rao-dien-tu',
-    'huong-dan-su-dung/quan-ly-tai-khoan',
   ],
 };
 

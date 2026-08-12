@@ -8,13 +8,13 @@ sidebar_position: 12
 
 # Area & Visual Map Management (E-Map)
 
-The **Zone Management (Area)** module provides an intuitive security monitoring center (E-Map). Instead of reading raw data rows, you can upload the actual floor plan of your building, place Doors and Cameras directly onto the map, and then monitor and control devices on a 2D spatial platform.
+The **Zone Management (Area)** module provides an intuitive security monitoring center (E-Map). Instead of reading raw data rows, you can upload the actual floor plan of your building, place Doors, Cameras and Alarms directly onto the map, and then monitor and control devices on a 2D spatial platform.
 
 ## 1. Workspace Overview
 
 The E-Map interface is designed for optimal use of space and is divided into 3 main areas:
 
-* **Left Column (Treeview):** A hierarchical folder tree for managing Zones (Areas) and the list of devices (Cameras, Doors) belonging to each zone. Includes an integrated quick-search bar.
+* **Left Column (Treeview):** A hierarchical folder tree for managing Zones (Areas) and the list of devices (Cameras, Doors, Alarms) belonging to each zone. Includes an integrated quick-search bar.
 * **Central Area (Map Canvas):** Displays the floor plan. You can **Drag & Drop** devices from the left-side folder tree directly onto the map. Hovering over a device icon on the map will automatically display its detailed information.
 * **Right Toolbar:** Contains map control tools including:
   * Save configuration (Save).
@@ -32,8 +32,8 @@ The E-Map interface is designed for optimal use of space and is divided into 3 m
 The system supports an intelligent context menu (Right-click) directly on the folder tree:
 
 * **Right-click on empty space:** Quickly create a brand new Zone.
-* **Right-click on a specific Zone:** Displays a function menu to **Add Sub-Zone**, **Assign Camera**, **Assign Door**, or **Edit/Delete** the zone.
-* **Right-click on a Device (Door/Camera):** Allows quick execution of hardware commands (e.g., Unlock Door).
+* **Right-click on a specific Zone:** Displays a function menu to **Add Sub-Zone**, **Assign Camera**, **Assign Door**, **Assign Alarm**, or **Edit/Delete** the zone.
+* **Right-click on a Device (Door/Camera/Alarm):** Allows quick execution of hardware commands (e.g., Unlock Door).
 
 ![Treeview Context Menu](/img/area-treeview.png)
 
@@ -53,6 +53,7 @@ When you left-click on a device icon on the map, a dashed selection box will app
 Opens a hot-action menu for the device at that location:
 * **Unlock Door:** Immediately activates the door relay to unlock it remotely.
 * **Open Camera:** Triggers a pop-up displaying the live video stream from the surveillance camera in that area.
+* **Lock item position:** Fixes the icon in place, preventing it from being moved, rotated, or flipped.
 * **Remove from Map:** Removes the icon from the floor plan (the device still exists in the left-side Treeview).
 
 ![Map Quick-Action Menu](/img/area-mapview.png)

@@ -32,6 +32,10 @@ When you click the **+ Add New** ➕ button or the **Edit** 📝 button, a confi
   * **Unassigned Column (Left):** Displays all personnel currently in the S-Safe system who have not yet been added to this group.
   * **Assigned Column (Right):** The list of personnel who are official members of this group.
 
+* **Access Schedule Allocation Area:**
+  * **Unassigned Column (Left):** Displays a list of available time slots/access schedules that have not yet been applied to the group.
+  * **Assigned Column (Right):** Time slots/access schedules currently applied to the group.
+
 ### Quick Navigation Buttons:
 * **`>>` Button:** Moves all or selected personnel from the *Unassigned* column to the *Assigned* column to add them to the group.
 * **`<<` Button:** Removes selected personnel from the group, moving them back from the *Assigned* column to the *Unassigned* column.

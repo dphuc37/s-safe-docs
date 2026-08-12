@@ -17,6 +17,7 @@ Màn hình hiển thị danh sách toàn bộ khách vãng lai đang có lịch 
 * **STT / Ảnh CCCD:** Số thứ tự và ảnh chụp trực tiếp giấy tờ tùy thân của khách để đối chiếu bảo vệ.
 * **Tên / CCCD:** Họ tên đầy đủ và số căn cước công dân của khách.
 * **Thẻ đã gán / Nhóm đã gán:** Mã thẻ từ vật lý được cấp tạm (nếu có) và Nhóm phân quyền khu vực khách được phép di chuyển (Ví dụ: *Phòng IT*).
+* **Ghi chú:** Ghi chú thông tin của khách.
 * **Cardholder Name:** Tên nhân viên hoặc người nội bộ bảo lãnh cho khách vào tòa nhà.
 * **Thao tác:** Gồm các nút Chỉnh sửa 📝 và Xóa 🗑️.
 
@@ -32,7 +33,8 @@ Khi có khách đến, lễ tân hoặc bảo vệ nhấn nút **+ Add New** ở
 2. **Visit Date:** Chọn ngày khách đến làm việc. Hệ thống sẽ tự động giới hạn quyền truy cập chỉ trong ngày này.
 3. **Cardholder:** Chọn tên nhân viên nội bộ chịu trách nhiệm tiếp đón hoặc bảo lãnh cho khách từ danh sách thả xuống.
 4. **Assigned Cards / Assigned Groups:** Khai báo mã thẻ hoặc chọn Nhóm quyền ra vào cấp cho khách.
-5. **Upload IC Photo (Góc phải):** Nhấn nút để kích hoạt webcam chụp lại mặt trước/mặt sau của thẻ CCCD khách để lưu trữ hồ sơ an ninh.
+5. **Note:** Nhập ghi chú thông tin của khách.
+6. **Upload IC Photo (Góc phải):** Nhấn nút để kích hoạt webcam chụp lại mặt trước/mặt sau của thẻ CCCD khách để lưu trữ hồ sơ an ninh.
 
 ![Hộp thoại đăng ký thông tin Khách vãng lai](/img/visitor-details.png)
 

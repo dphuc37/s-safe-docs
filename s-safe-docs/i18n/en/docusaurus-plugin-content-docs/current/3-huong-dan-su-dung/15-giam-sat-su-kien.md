@@ -14,13 +14,16 @@ The **Event Monitoring** module is the real-time security operations center of t
 
 The upper area displays a continuously updating list of events pushed from door controllers, with no page refresh required (Auto-refresh):
 
-* **Event:** The event code classification (e.g., *TypeCardID* — Card authentication swipe).
-* **Time:** The exact timestamp accurate to the second when the event occurred on-site.
-* **Source:** The name of the device or Door that triggered the event (e.g., *Main Door CR1*).
-* **Description:** Detailed status of the access attempt (e.g., *Request granted: full test, used* — Access was approved).
-* **Name:** The full name of the employee who swiped (if the system successfully matched the identity).
-* **Profile Photo:** The original profile photo of the employee for the guard to visually compare against the person standing in front of the camera.
-* **Status:** The accompanying alert signal or logical state.
+* **Personnel:** Displays the avatar and full name of the employee (e.g., *Nguyen Van A, Tran Thi B*) or shows *Visitor* for unidentified individuals.
+* **Location (Source):** The location of the door or device where the event originated (e.g., *Basement Door, Warehouse Door, Main Entrance*).
+* **Event:** The type of event recorded by the system (e.g., *Card Rejected, Door Status, System Event*).
+* **Details:** A specific description of the reason or status (e.g., *Access denied: Card not registered in the system*, *Door connection lost*, *System rebooted unexpectedly*).
+* **Time:** The exact timestamp (Year-Month-Day Hour:Minute:Second) of the event's occurrence.
+* **Status:** Associated alert indicator (e.g., a red **ALERT** badge for access denial events or danger warnings).
+
+> **Quick Action Buttons (Top-right corner):**
+> * **Test Event (Green):** Generates a simulated event to test connectivity and system response.
+> * **Export (Orange):** Exports the current event log list to a data file.
 
 ![Live Event Monitoring Interface](/img/event.png)
 
