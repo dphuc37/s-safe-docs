@@ -1,21 +1,21 @@
 ---
 id: canh-bao
-title: Alert Center
-sidebar_label: Alerts
+title: Warning Center
+sidebar_label: Warning
 sidebar_class_name: icon-canh-bao
 sidebar_position: 18
 ---
 
-# Alert Center (Real-time Alerts)
+# Warning Center (Real-time Warning)
 
-The **Alerts** module is the live operations screen for security personnel. This interface consolidates all active incidents occurring at the facility, providing image data, floor map positioning, and quick-action command buttons to resolve incidents through a fixed status workflow.
+The **Warning** module is the live operations screen for security personnel. This interface consolidates all active incidents occurring at the facility, providing image data, floor map positioning, and quick-action command buttons to resolve incidents through a fixed status workflow.
 
-## 1. The Chain Relationship: Automation | Alarm | Alert
+## 1. The Chain Relationship: Automation | Alarm | Warning
 
-The Alert screen operates based on the combined output of the two preceding modules:
+The warning screen operates based on the combined output of the two preceding modules:
 * **Automation** automatically detects hardware faults or restricted zone violations and fires the trigger command.
 * **Alarm** provides the priority level configuration (display color) and the corresponding Standard Operating Procedure (SOP) steps for that incident.
-* **Alert** receives both streams and visually displays them on screen, requiring security personnel to follow the correct checklist procedure and log their response actions.
+* **Warning** receives both streams and visually displays them on screen, requiring security personnel to follow the correct checklist procedure and log their response actions.
 
 ---
 
@@ -47,11 +47,9 @@ Displays a list of incidents that have been fully resolved or confirmed as false
 
 When you select any alert from the list, the central area provides the following on-site verification information:
 
-* **Integrated Video Surveillance System:** Divided into 2 screen panels:
-  * **LIVE Panel:** Displays the real-time video stream from the camera covering the incident area.
-  * **ALERT PLAYBACK Panel:** Automatically plays back the short video clip recorded at the exact moment the incident was triggered, for root cause analysis.
 * **Incident Location Map (E-Map):** Displays the floor plan of the level.
   * *Blinking fence effect:* If the incident originates from a geofence zone violation or electronic perimeter breach (Geofence Intrusion), the system will display a continuously blinking red border frame around the coordinates of that zone/fence on the floor plan, enabling rapid localization of the intrusion point.
+* **Surveillance camera:** Live feed from the camera.
 
 ---
 

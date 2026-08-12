@@ -10,13 +10,13 @@ sidebar_position: 16
 
 The **Alarms** module is where you define security risks, classify their severity levels, and establish Standard Operating Procedures (SOPs) for on-duty personnel to follow when an incident occurs (e.g., Door held open too long, Forced door open, Fire, etc.).
 
-## 1. The Alarm - Automation - Alert Matrix
+## 1. The Alarm - Automation - Warning Matrix
 
 In the S-Safe system, **Alarms** do not operate independently — they form a central link in a 3-step security response chain:
 
 1. **Automation (Trigger / Logic):** The "Brain" that detects incidents. Automation contains IF-THEN logic rules. *Example: IF a forced door open is detected, THEN trigger the "Forced Open" Alarm.*
 2. **Alarm (Incident Definition / Response):** The "Heart" of the event. This module defines how dangerous the incident is (Level 1/2/3) and specifies the steps security personnel must follow (SOP) to resolve it when it appears on screen.
-3. **Alert (Notification / Broadcast):** The system's "Loudspeaker." It takes information from the Alarm to send outbound notifications (Email to the Director, mobile Push notification, SMS, etc.).
+3. **Warning (Notification / Broadcast):** The system's "Loudspeaker." It takes information from the Alarm to send outbound notifications (Email to the Director, mobile Push notification, SMS, etc.).
 
 ---
 
@@ -43,6 +43,9 @@ This is where the incident response protocol for security personnel is configure
   * **Level 2 – Warning (Orange):** Requires prompt attention (Door held open too long).
   * **Level 3 – Notice (Green):** Requires monitoring (Secondary device disconnected).
 * **Standard Operating Procedure (SOP):** You can manually type each step of the instructions, or click **Select Preset Template** to quickly add standard procedures (e.g., *Call the shift supervisor, Lock all entry/exit doors, Check camera footage...*). These steps will be displayed on the guard's screen as a checklist to follow when an incident occurs.
+
+### Surveillance Cameras
+You can select cameras connected to the system to monitor the situation during an incident. The selected camera will automatically appear on the screen when an alarm is triggered.
 
 ### Assigned Automations
 This section lists all Automation Rules currently linked to "trigger" this alarm. You can review this section to identify exactly which hardware or sensor is being used to monitor the incident (e.g., *[#0002] IF Geofence intrusion THEN Trigger Alarm...*).

@@ -17,6 +17,7 @@ The screen displays a list of all visitors with scheduled appointments or curren
 * **No. / ID Photo:** Sequential number and a directly captured photo of the visitor's identity document for security verification.
 * **Name / ID Number:** The visitor's full name and national ID card number.
 * **Assigned Card / Assigned Group:** The temporarily issued physical card code (if any) and the access group defining the areas the visitor is permitted to access (e.g., *IT Room*).
+* **Note:** Record customer information.
 * **Cardholder Name:** The name of the internal employee or host responsible for sponsoring the visitor's entry.
 * **Actions:** Includes Edit 📝 and Delete 🗑️ buttons.
 
@@ -32,7 +33,8 @@ When a visitor arrives, the receptionist or security guard clicks **+ Add New** 
 2. **Visit Date:** Select the date of the visit. The system will automatically restrict access permissions to this date only.
 3. **Cardholder:** Select the name of the internal employee responsible for receiving or sponsoring the visitor from the dropdown list.
 4. **Assigned Cards / Assigned Groups:** Declare a card code or select an access group to grant to the visitor.
-5. **Upload IC Photo (Right side):** Click the button to activate the webcam and capture the front and back of the visitor's national ID card for security record keeping.
+5. **Note:** Enter notes regarding the guest's information.
+6. **Upload IC Photo (Right side):** Click the button to activate the webcam and capture the front and back of the guest's ID card for security record-keeping.
 
 ![Visitor Registration Dialog](/img/visitor-details.png)
 

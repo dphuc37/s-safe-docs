@@ -14,7 +14,7 @@ Module **Camera** cho phép bạn tích hợp các luồng video giám sát tr�
 
 Màn hình chính hiển thị danh sách (listview) toàn bộ Camera đã được khai báo trên hệ thống. 
 Các thông tin hiển thị giúp người vận hành kiểm soát nhanh bao gồm:
-* **Thông định danh:** ID, Tên camera.
+* **Thông tin định danh:** ID, Tên camera.
 * **Luồng dữ liệu:** Đường dẫn Url (Thường là link RTSP của luồng camera).
 * **Tài khoản:** Tên đăng nhập và Mật khẩu của camera (để phần mềm có quyền truy xuất luồng hình ảnh).
 * **Cửa:** Tên Cửa đang được gán đồng bộ với camera này.

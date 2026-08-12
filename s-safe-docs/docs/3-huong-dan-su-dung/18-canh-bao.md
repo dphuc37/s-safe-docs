@@ -6,16 +6,16 @@ sidebar_class_name: icon-canh-bao
 sidebar_position: 18
 ---
 
-# Trung tâm Cảnh báo (Alerts Real-time)
+# Trung tâm Cảnh báo (Warning Real-time)
 
 Module **Cảnh báo** là màn hình tác nghiệp trực tuyến dành cho nhân viên an ninh. Giao diện này tập hợp toàn bộ các sự cố đang diễn ra tại cơ sở, cung cấp dữ liệu hình ảnh, vị trí sơ đồ và các nút lệnh xử lý nhanh để giải quyết sự cố theo luồng trạng thái cố định.
 
-## 1. Mối liên hệ chuỗi: Automation | Alarm | Alert
+## 1. Mối liên hệ chuỗi: Automation | Alarm | Warning
 
 Màn hình Cảnh báo vận hành dựa trên sự kết hợp của hai module trước đó:
 * **Automation** đóng vai trò tự động phát hiện lỗi phần cứng hoặc vi phạm vùng cấm và kích nổ lệnh.
 * **Alarm** cung cấp cấu hình độ ưu tiên (Màu sắc hiển thị) và các bước xử lý tiêu chuẩn (SOP) tương ứng cho sự cố đó.
-* **Alert** tiếp nhận hai luồng trên để hiển thị trực quan lên màn hình, ép nhân viên an ninh phải thực hiện đúng quy trình checklist và ghi nhận nhật ký xử lý.
+* **Warning** tiếp nhận hai luồng trên để hiển thị trực quan lên màn hình, ép nhân viên an ninh phải thực hiện đúng quy trình checklist và ghi nhận nhật ký xử lý.
 
 ---
 
@@ -47,11 +47,9 @@ Hiển thị danh sách các sự cố đã được giải quyết xong hoặc 
 
 Khi chọn vào một cảnh báo bất kỳ trong danh sách, khu vực trung tâm cung cấp các thông tin xác minh thực địa bao gồm:
 
-* **Hệ thống Video giám sát liên kết:** Chia làm 2 khung màn hình:
-  * Khung **TRỰC TIẾP (LIVE):** Hiển thị luồng video thời gian thực từ camera khu vực xảy ra sự cố.
-  * Khung **XEM LẠI CẢNH BÁO:** Tự động phát lại đoạn video ngắn ghi lại thời điểm sự cố vừa bị kích hoạt để kiểm tra nguyên nhân.
 * **Bản đồ định vị sự cố (E-Map):** Hiển thị sơ đồ mặt bằng tầng. 
   * *Hiệu ứng hàng rào nhấp nháy:* Nếu sự cố bắt nguồn từ lỗi vi phạm vùng cấm hoặc hàng rào điện tử (Geofence intrusion), hệ thống sẽ hiển thị một khung viền màu đỏ nhấp nháy liên tục xung quanh tọa độ của vùng/hàng rào đó trên sơ đồ mặt bằng, giúp định vị nhanh vị trí xâm nhập.
+* **Camera giám sát:** Hiển thị trực tiếp từ camera.
 
 ---
 

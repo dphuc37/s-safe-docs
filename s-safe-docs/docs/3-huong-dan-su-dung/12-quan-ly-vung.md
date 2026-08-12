@@ -8,13 +8,13 @@ sidebar_position: 12
 
 # Quản lý Vùng & Bản đồ trực quan (E-Map)
 
-Module **Quản lý Vùng (Area)** cung cấp một trung tâm giám sát an ninh trực quan (E-Map). Thay vì nhìn vào những dòng dữ liệu khô khan, bạn có thể tải lên sơ đồ mặt bằng thực tế của tòa nhà, bố trí trực tiếp các Cửa và Camera lên bản đồ, từ đó theo dõi và điều khiển thiết bị ngay trên nền tảng không gian 2D.
+Module **Quản lý Vùng (Area)** cung cấp một trung tâm giám sát an ninh trực quan (E-Map). Thay vì nhìn vào những dòng dữ liệu khô khan, bạn có thể tải lên sơ đồ mặt bằng thực tế của tòa nhà, bố trí trực tiếp các Cửa, Camera và Báo động lên bản đồ, từ đó theo dõi và điều khiển thiết bị ngay trên nền tảng không gian 2D.
 
 ## 1. Tổng quan không gian làm việc
 
 Giao diện E-Map được thiết kế tối ưu hóa không gian, chia làm 3 khu vực chính:
 
-* **Cột trái (Treeview):** Cây thư mục quản lý phân cấp các Vùng (Khu vực) và danh sách thiết bị (Camera, Cửa) thuộc vùng đó. Có tích hợp thanh tìm kiếm nhanh.
+* **Cột trái (Treeview):** Cây thư mục quản lý phân cấp các Vùng (Khu vực) và danh sách thiết bị (Camera, Cửa, Báo động) thuộc vùng đó. Có tích hợp thanh tìm kiếm nhanh.
 * **Khu vực trung tâm (Bản đồ):** Hiển thị sơ đồ mặt bằng. Bạn có thể **Kéo & Thả (Drag & Drop)** thiết bị từ cây thư mục lề trái thẳng vào bản đồ. Khi di chuột (Hover) lên icon thiết bị trên bản đồ, thông tin chi tiết sẽ tự động hiển thị.
 * **Thanh tác vụ (Toolbar lề phải):** Chứa các công cụ điều khiển bản đồ bao gồm: 
   * Lưu cấu hình (Save).
@@ -32,8 +32,8 @@ Giao diện E-Map được thiết kế tối ưu hóa không gian, chia làm 3 
 Hệ thống hỗ trợ Menu ngữ cảnh (Click chuột phải) thông minh ngay trên cây thư mục:
 
 * **Chuột phải vào khoảng trống:** Tạo nhanh một Vùng mới hoàn toàn.
-* **Chuột phải vào một Vùng cụ thể:** Hiển thị menu chức năng để **Thêm vùng con**, **Gán Camera**, **Gán Cửa**, hoặc **Sửa/Xóa** vùng đó.
-* **Chuột phải vào Thiết bị (Cửa/Camera):** Cho phép thao tác nhanh lệnh phần cứng (Ví dụ: Mở cửa).
+* **Chuột phải vào một Vùng cụ thể:** Hiển thị menu chức năng để **Thêm vùng con**, **Gán Camera**, **Gán Cửa**, **Gán Báo động**, hoặc **Sửa/Xóa** vùng đó.
+* **Chuột phải vào Thiết bị (Cửa/Camera/Báo động):** Cho phép thao tác nhanh lệnh phần cứng (Ví dụ: Mở cửa).
 
 ![Menu thao tác trên Cây thư mục](/img/area-treeview.png)
 
@@ -53,6 +53,7 @@ Khi bạn nhấp chuột trái vào một biểu tượng thiết bị trên b�
 Mở ra menu thao tác nóng đối với thiết bị tại vị trí đó:
 * **Mở cửa:** Kích hoạt rơ-le mở cửa ngay lập tức từ xa.
 * **Mở Camera:** Gọi popup hiển thị luồng video trực tiếp từ Camera giám sát khu vực đó.
+* **Khóa vị trí thiết bị:** Giữ cố định icon, không cho phép di chuyển, xoay, lật.
 * **Xóa khỏi bản đồ:** Gỡ biểu tượng khỏi mặt bằng (Thiết bị vẫn tồn tại trong Treeview bên trái).
 
 ![Menu thao tác nhanh trên Bản đồ](/img/area-mapview.png)
