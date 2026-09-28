@@ -1,0 +1,57 @@
+#pdf-export-print-root {
+  display: none;
+}
+
+@media print {
+  #__docusaurus {
+    display: none !important;
+  }
+
+  #pdf-export-print-root {
+    display: block !important;
+    max-width: 720px;
+    margin: 0 auto;
+    color: #111;
+    font-family: 'Be Vietnam Pro', system-ui, sans-serif;
+  }
+
+  #pdf-export-print-root .pdf-cover {
+    page-break-after: always;
+    padding-top: 30vh;
+    text-align: center;
+  }
+
+  #pdf-export-print-root .pdf-cover ul {
+    display: inline-block;
+    text-align: left;
+    margin-top: 1rem;
+  }
+
+  #pdf-export-print-root .pdf-doc-section {
+    page-break-before: always;
+  }
+
+  #pdf-export-print-root img {
+    max-width: 100% !important;
+    height: auto !important;
+    box-shadow: none !important;
+  }
+
+  #pdf-export-print-root pre,
+  #pdf-export-print-root code {
+    background: #f6f8fa !important;
+    color: #1f2328 !important;
+    white-space: pre-wrap !important;
+    word-break: break-word;
+    border: 1px solid #d0d7de;
+  }
+
+  #pdf-export-print-root a {
+    color: inherit !important;
+    text-decoration: none !important;
+  }
+
+  @page {
+    margin: 18mm 14mm;
+  }
+}

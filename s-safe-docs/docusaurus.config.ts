@@ -2,10 +2,19 @@ import { themes as prismThemes } from 'prism-react-renderer';
 import type { Config } from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
 
+const currentLocale = process.env.DOCUSAURUS_CURRENT_LOCALE || 'vi';
+
 const config: Config = {
   title: 'S-Safe Documentation',
   tagline: 'Tài liệu hướng dẫn hệ thống S-Safe',
   favicon: 'img/S-Safe_logo.png', // Đã đổi sang favicon mới của công ty
+
+  stylesheets: [
+    {
+      href: 'https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&display=swap',
+      type: 'text/css',
+    },
+  ],
 
   url: 'https://your-docusaurus-site.example.com',
   baseUrl: '/',
@@ -67,6 +76,11 @@ const config: Config = {
         src: 'img/S-Safe_logo.png', // Tên file logo chính thức của bác
       },
       items: [
+        {
+          to: '/export',
+          label: currentLocale === 'en' ? 'Download PDF' : 'Tải PDF',
+          position: 'right',
+        },
         {
           type: 'localeDropdown', // Nút chuyển Tiếng Việt / Tiếng Anh
           position: 'right',

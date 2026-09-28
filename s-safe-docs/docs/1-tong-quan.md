@@ -2,7 +2,7 @@
 id: system-requirements
 title: Yêu cầu hệ thống
 sidebar_class_name: icon-he-thong
-slug: /
+slug: /yeu-cau-he-thong
 ---
 
 # Yêu cầu hệ thống S-Safe

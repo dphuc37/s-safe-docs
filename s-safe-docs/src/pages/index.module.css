@@ -1,23 +1,169 @@
-/**
- * CSS files with the .module.css suffix will be treated as CSS modules
- * and scoped locally.
- */
-
-.heroBanner {
-  padding: 4rem 0;
+.hero {
+  background: linear-gradient(135deg, #1c3663 0%, #2f5aa5 55%, #4e73b3 100%);
+  color: #fff;
+  padding: 4.5rem 0 3.5rem;
   text-align: center;
-  position: relative;
-  overflow: hidden;
 }
 
-@media screen and (max-width: 996px) {
-  .heroBanner {
-    padding: 2rem;
-  }
+.heroInner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.buttons {
+.heroLogo {
+  width: 72px;
+  height: 72px;
+  object-fit: contain;
+  background: #fff;
+  border-radius: 18px;
+  padding: 10px;
+  margin-bottom: 1.25rem;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+}
+
+.heroTitle {
+  font-size: 2.75rem;
+  font-weight: 800;
+  margin: 0 0 0.5rem;
+  color: #fff;
+}
+
+.heroTagline {
+  font-size: 1.15rem;
+  color: rgba(255, 255, 255, 0.9);
+  max-width: 640px;
+  margin: 0 auto 2rem;
+}
+
+.heroButtons {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.ctaOutline {
+  color: #fff;
+  border: 2px solid rgba(255, 255, 255, 0.7);
+  background: transparent;
+}
+
+.ctaOutline:hover {
+  background: rgba(255, 255, 255, 0.12);
+  color: #fff;
+}
+
+.searchHint {
+  margin-top: 1.5rem;
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/* Dải link gọn cho các trang tài liệu thuần (không phải module thật của
+   phần mềm) - tách khỏi lưới dashboard để lưới chỉ còn đúng module thật. */
+.metaLinks {
+  margin-top: 1.25rem;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.metaLink {
+  color: rgba(255, 255, 255, 0.85) !important;
+  font-size: 0.85rem;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.metaLink:hover {
+  color: #ffffff !important;
+}
+
+.metaDivider {
+  color: rgba(255, 255, 255, 0.4);
+}
+
+/* Khung "preview phần mềm" cho lưới module thật - theo đúng light/dark
+   mode hiện tại của trang doc, không ép cứng 1 theme. */
+.dashboardPanel {
+  background: #eef1f6;
+  padding: 2.5rem 0 3rem;
+}
+
+[data-theme='dark'] .dashboardPanel {
+  background: #14161f;
+}
+
+.section {
+  margin-top: 2rem;
+}
+
+.section:first-child {
+  margin-top: 0;
+}
+
+.sectionTitle {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: #64748b;
+  margin-bottom: 0.9rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid #3a6ea5;
+}
+
+[data-theme='dark'] .sectionTitle {
+  color: #9aa0ab;
+}
+
+.cardGrid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.85rem;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  width: 128px;
+  height: 128px;
+  padding: 0.75rem;
+  border-radius: 6px;
+  border: 1px solid #d7dbe3;
+  background: #ffffff;
+  color: #1c1e26;
+  text-align: center;
+  text-decoration: none !important;
+  transition: background-color 0.12s ease, border-color 0.12s ease;
+}
+
+[data-theme='dark'] .card {
+  border-color: #45484f;
+  background: #383a42;
+  color: #f0f1f3;
+}
+
+.card:hover {
+  background: #2f5aa5;
+  border-color: #2f5aa5;
+  color: #ffffff;
+}
+
+.cardLabel {
+  font-weight: 500;
+  font-size: 0.82rem;
+  line-height: 1.25;
+}
+
+@media screen and (max-width: 640px) {
+  .heroTitle {
+    font-size: 2rem;
+  }
 }

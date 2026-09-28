@@ -2,7 +2,7 @@
 id: system-requirements
 title: System Requirements
 sidebar_class_name: icon-he-thong
-slug: /
+slug: /yeu-cau-he-thong
 ---
 
 # S-Safe System Requirements
