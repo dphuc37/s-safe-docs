@@ -15,7 +15,6 @@ const config: Config = {
 
   onBrokenLinks: 'warn',
 
-  // Cấu hình ngôn ngữ
   i18n: {
     defaultLocale: 'vi',
     locales: ['vi', 'en'],
@@ -79,7 +78,8 @@ const config: Config = {
       theme: prismThemes.github,
       darkTheme: prismThemes.dracula,
     },
-  } satisfies Preset.ThemeConfig,
+  } satisfies
+    Preset.ThemeConfig,
 };
 
 export default config;

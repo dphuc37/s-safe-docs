@@ -12,31 +12,32 @@ In the S-Safe system, a **Door** is a logical object created by mapping physical
 
 ## 1. Door List Interface
 
-The main screen displays a list of all active Doors in the system.
+The main screen displays a list of all active Doors in the system in a structured data table:
 
-A key feature of this interface is the **Quick-Action Toggles** displayed directly in the list, allowing operators to enable or disable features instantly without navigating to the details view:
-* **Unlocked for maintenance:** Freely unlocks the door (typically used during maintenance, incidents, or open-door office hours).
-* **Enable Open Too Long:** Toggles the alert feature for when a door is held open longer than the configured duration.
-* **Enable Forced Open:** Toggles the forced-open alert feature (door opened without valid authentication).
-* **Access Controller:** Displays the name and IP of the Controller managing this door.
+* **Basic Information:** No., Door Name, and the Access Controller managing the door (including its IP address).
+* **Status Toggles:** The interface directly displays the current state of security configurations, including:
+  * *Unlocked for maintenance:* Status of the free-access unlock mode (typically used during maintenance or office hours).
+  * *Enable Open Too Long:* Status of the door-held-open alert feature.
+  * *Enable Forced Open:* Status of the forced-open alert feature.
+* **Action Toolbar:** Located at the bottom of the screen, providing **Add New** (Blue), **Edit** (Green), and **Delete** (Red) buttons, along with pagination controls.
 
-![Door Management List](/img/door-listview.png)
+<img src="/img/door/door-listview.png" alt="Door Management List" width="100%" />
 
 ## 2. Adding and Configuring a Door
 
-To create a new Door, click the **+ Add New** ➕ button in the top-right corner. The Door configuration interface is divided into 2 main tabs:
+To create a new Door, click the **+ Add New** button in the bottom toolbar. The **Door Configuration** dialog is divided into 2 main tabs:
 
 ### Tab 1: Information (Assign Physical Devices via Drag & Drop)
-This is where you define which hardware components this Door will use. The system uses an intuitive **Drag & Drop** mechanism.
+This area is used to define the hardware components for the Door. The system utilizes an intuitive **Drag & Drop** mechanism from left to right.
 
-1. **Select the door controller:** Choose the physical Controller from the dropdown list.
-2. **Name:** Enter an identifying name for the door (e.g., *Main Entrance, Server Room Door*).
+1. **Select door controller:** Choose the physical Controller from the dropdown list in the left column.
+2. **Door Configuration (Right column):** Enter an identifying **Name (*)** for the door (e.g., *Office Door*).
 3. **Drag and drop components:**
-   * **Reader:** Drag the Reader icon from the left column and drop it into the **Outside Reader** (entry direction) or **Inside Reader** (exit direction) slot. You can also select the authentication method, such as *CardOnly*.
-   * **Input:** Drag the IN ports and drop them into the Input box. Set the contact state (e.g., *NormallyClosed*) and the signal type to *DoorSensor* (magnetic door sensor).
+   * **Reader:** Drag the Reader icon from the left column and drop it into the **Outside Reader** or **Inside Reader** slot on the right. Select the authentication method (e.g., *CardOnly*). Click the `X` button to remove it.
+   * **Input:** Drag the IN ports and drop them into the Input box. Set the contact state (e.g., *NormallyOpen*) and the signal type (*DoorSensor* or *ExitButton*).
    * **Output:** Drag the Output ports and drop them into the Output box. Set the signal type to *DoorStrike* (electromagnetic lock).
 
-![Door Information Configuration](/img/door-details-1.png)
+<img src="/img/door/door-details-1.png" alt="Door Information Configuration" width="100%" />
 
 :::tip[Input/Output Setup Tips]
 Make sure you cross-reference the actual wiring diagram from the installation technician to correctly map the corresponding IN/OUT ports in the software.
@@ -45,19 +46,21 @@ Make sure you cross-reference the actual wiring diagram from the installation te
 ### Tab 2: Maintenance (Configure Alerts and Timings)
 Switch to the "Maintenance" tab to configure operational rules and security time limits for the door:
 
-* **Unlocked for maintenance:** Enables maintenance unlock mode.
-* **Enable open too long:** Activates the door-held-open-too-long alert feature.
-* **Enable forced open:** Activates the forced-open alert feature.
-* **Open too long threshold seconds:** Enter the number of seconds (e.g., 15 seconds). If the door remains open beyond this duration without closing (detected via the Door Sensor), the system will trigger an alarm.
-* **Unlock duration seconds:** The relay delay time (e.g., 3 seconds). This is the duration the electromagnetic lock remains released, giving the user time to pull the door open after a successful card swipe.
+* **Unlocked for maintenance:** Enable/disable maintenance unlock mode.
+* **Enable open too long:** Enable/disable the door-held-open-too-long alert.
+* **Enable forced open:** Enable/disable the forced-open alert.
+* **Open too long threshold seconds:** Enter the time limit (e.g., 30 seconds). If the door remains open beyond this duration without closing, the system will trigger an alarm.
+* **Unlock duration seconds:** The relay delay time (e.g., 5 seconds). This is the duration the electromagnetic lock remains released after a valid card swipe.
 
-![Door Maintenance Configuration](/img/door-details-2.png)
+Once finished, click the **Save** button (Green) in the bottom right corner to apply the configuration.
+
+<img src="/img/door/door-details-2.png" alt="Door Maintenance Configuration" width="100%" />
 
 ---
 
 ## 3. Editing and Deleting
-* Click the **Edit** 📝 button (blue icon) in the actions column to reconfigure settings or replace the reader assigned to the door.
-* Click the **Delete** 🗑️ button (red icon) to remove the door.
+* **Edit:** Select a door from the list and click the **Edit** button in the bottom toolbar to reconfigure settings or replace readers.
+* **Delete:** Select a door and click the **Delete** button to permanently remove it from the system.
 
 :::warning[Warning When Deleting]
 When you delete a Door, the Access Rules currently granting personnel permission to pass through this door may be affected. Review your access permissions after deletion.
