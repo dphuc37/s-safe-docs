@@ -2,23 +2,40 @@
   display: flex;
   align-items: center;
   gap: 1rem;
-  margin: 1rem 0 1.5rem;
+  margin: 0.75rem 0 1rem;
 }
 
 .counter {
   color: var(--ifm-color-emphasis-700);
-  font-size: 0.9rem;
+  font-size: 0.85rem;
 }
 
 .groups {
   display: grid;
-  gap: 1.5rem;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
 }
 
-.group {
+@media screen and (max-width: 640px) {
+  .groups {
+    grid-template-columns: 1fr;
+  }
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
   border: 1px solid var(--ifm-color-emphasis-300);
   border-radius: 10px;
-  padding: 1rem 1.25rem;
+  overflow: hidden;
+  background: var(--ifm-background-surface-color);
+  box-shadow: 0 1px 3px rgba(15, 23, 42, 0.06);
+}
+
+/* Card ghép nhiều sub-section (VD: Cấu hình hệ thống + Hướng dẫn sử dụng) -
+   mỗi section vẫn có header/list riêng, ngăn cách bằng đường kẻ mảnh. */
+.card > .groupHeader ~ .groupHeader {
+  border-top: 1px solid var(--ifm-color-emphasis-300);
 }
 
 .groupHeader {
@@ -26,7 +43,17 @@
   align-items: center;
   justify-content: space-between;
   gap: 1rem;
-  margin-bottom: 0.75rem;
+  padding: 0.65rem 0.9rem;
+  background: var(--ifm-color-emphasis-100);
+  border-bottom: 1px solid var(--ifm-color-emphasis-300);
+}
+
+.groupHeader strong {
+  font-size: 0.95rem;
+}
+
+.groupBody {
+  padding: 0.75rem 0.9rem;
 }
 
 .itemList {
@@ -34,18 +61,26 @@
   margin: 0;
   padding: 0;
   display: grid;
-  gap: 0.5rem;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.15rem 1.5rem;
 }
 
 .itemLabel {
   display: flex;
-  align-items: center;
-  gap: 0.6rem;
+  align-items: flex-start;
+  gap: 0.5rem;
   cursor: pointer;
+  font-size: 0.9rem;
+  padding: 0.3rem 0;
+}
+
+.itemLabel input {
+  margin-top: 0.2rem;
+  flex-shrink: 0;
 }
 
 .generateBar {
-  margin: 2rem 0;
+  margin: 1.25rem 0;
   display: flex;
   flex-direction: column;
   align-items: flex-start;

@@ -109,6 +109,9 @@ export default function ExportPage(): ReactNode {
     });
   }, []);
 
+  const metaGroups = groups.filter((g) => g.kind === 'meta');
+  const productGroups = groups.filter((g) => g.kind === 'product');
+
   const toggleAll = useCallback(() => {
     setSelected((prev) =>
       prev.size === totalCount
@@ -155,38 +158,29 @@ export default function ExportPage(): ReactNode {
         {status === 'error' && <div className="alert alert--danger">{t.fetchError}</div>}
 
         <div className={styles.groups}>
-          {groups.map((group) => {
-            const groupAllSelected =
-              group.items.length > 0 && group.items.every((i) => selected.has(i.href));
-            return (
-              <div key={group.title} className={styles.group}>
-                <div className={styles.groupHeader}>
-                  <strong>{group.title}</strong>
-                  <button
-                    type="button"
-                    className="button button--sm button--outline button--primary"
-                    onClick={() => toggleGroup(group)}
-                  >
-                    {groupAllSelected ? t.clearAll : t.selectGroup}
-                  </button>
-                </div>
-                <ul className={styles.itemList}>
-                  {group.items.map((item) => (
-                    <li key={item.href}>
-                      <label className={styles.itemLabel}>
-                        <input
-                          type="checkbox"
-                          checked={selected.has(item.href)}
-                          onChange={() => toggle(item.href)}
-                        />
-                        {item.label}
-                      </label>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            );
-          })}
+          <div className={styles.card}>
+            {metaGroups.map((group) => (
+              <GroupSection
+                key={group.title}
+                group={group}
+                selected={selected}
+                toggle={toggle}
+                toggleGroup={toggleGroup}
+                t={t}
+              />
+            ))}
+          </div>
+          {productGroups.map((group) => (
+            <div key={group.title} className={styles.card}>
+              <GroupSection
+                group={group}
+                selected={selected}
+                toggle={toggle}
+                toggleGroup={toggleGroup}
+                t={t}
+              />
+            </div>
+          ))}
         </div>
 
         <div className={styles.generateBar}>
@@ -210,6 +204,53 @@ export default function ExportPage(): ReactNode {
         />
       )}
     </Layout>
+  );
+}
+
+function GroupSection({
+  group,
+  selected,
+  toggle,
+  toggleGroup,
+  t,
+}: {
+  group: DocGroup;
+  selected: Set<string>;
+  toggle: (href: string) => void;
+  toggleGroup: (group: DocGroup) => void;
+  t: (typeof STRINGS)[keyof typeof STRINGS];
+}) {
+  const groupAllSelected =
+    group.items.length > 0 && group.items.every((i) => selected.has(i.href));
+  return (
+    <>
+      <div className={styles.groupHeader}>
+        <strong>{group.title}</strong>
+        <button
+          type="button"
+          className="button button--sm button--outline button--primary"
+          onClick={() => toggleGroup(group)}
+        >
+          {groupAllSelected ? t.clearAll : t.selectGroup}
+        </button>
+      </div>
+      <div className={styles.groupBody}>
+        <ul className={styles.itemList}>
+          {group.items.map((item) => (
+            <li key={item.href}>
+              <label className={styles.itemLabel}>
+                <input
+                  type="checkbox"
+                  checked={selected.has(item.href)}
+                  onChange={() => toggle(item.href)}
+                />
+                {item.label}
+              </label>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </>
   );
 }
 
