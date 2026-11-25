@@ -2,7 +2,7 @@ import React, { type ReactNode, useMemo, useState, useCallback } from 'react';
 import { createPortal } from 'react-dom';
 import Layout from '@theme/Layout';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
-import { useBaseUrlUtils } from '@docusaurus/useBaseUrl';
+import useBaseUrl, { useBaseUrlUtils } from '@docusaurus/useBaseUrl';
 import { useDocGroups, type DocGroup } from '@site/src/utils/useDocGroups';
 import styles from './export.module.css';
 
@@ -287,10 +287,12 @@ function PrintView({
   }, []);
 
   const now = new Date().toLocaleDateString();
+  const logoSrc = useBaseUrl('/img/brand/logo-s-safe.png');
 
   return createPortal(
     <div id="pdf-export-print-root" ref={rootRef}>
       <div className="pdf-cover">
+        <img className="pdf-cover-logo" src={logoSrc} alt="S-Safe" />
         <h1>{strings.coverTitle}</h1>
         <p>{strings.coverSubtitle}</p>
         <p>

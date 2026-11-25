@@ -7,16 +7,25 @@ const currentLocale = process.env.DOCUSAURUS_CURRENT_LOCALE || 'vi';
 const config: Config = {
   title: 'S-Safe Documentation',
   tagline: 'Tài liệu hướng dẫn hệ thống S-Safe',
-  favicon: 'img/S-Safe_logo.png', // Đã đổi sang favicon mới của công ty
+  favicon: 'img/brand/favicon.png',
 
   stylesheets: [
     {
-      href: 'https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&display=swap',
+      href: 'https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=Google+Sans+Flex:wght@400&family=Google+Sans:wght@400;500;700&display=swap',
       type: 'text/css',
     },
   ],
 
-  url: 'https://your-docusaurus-site.example.com',
+  headTags: [
+    { tagName: 'link', attributes: { rel: 'preconnect', href: 'https://fonts.googleapis.com' } },
+    {
+      tagName: 'link',
+      attributes: { rel: 'preconnect', href: 'https://fonts.gstatic.com', crossorigin: 'anonymous' },
+    },
+    { tagName: 'link', attributes: { rel: 'apple-touch-icon', href: '/img/brand/apple-touch-icon.png' } },
+  ],
+
+  url: 'https://doc.s-safe.com',
   baseUrl: '/',
 
   organizationName: 'SMT',
@@ -40,6 +49,7 @@ const config: Config = {
         docs: {
           routeBasePath: '/',
           sidebarPath: './sidebars.ts',
+          beforeDefaultRemarkPlugins: [require('./src/plugins/remark-zoom-img')],
         },
         blog: false,
         theme: {
@@ -49,40 +59,41 @@ const config: Config = {
     ],
   ],
 
-  // TÍCH HỢP THANH TÌM KIẾM OFFLINE TẠI ĐÂY
   themes: [
     [
-      require.resolve("@easyops-cn/docusaurus-search-local"),
+      require.resolve('@easyops-cn/docusaurus-search-local'),
       {
         hashed: true,
-        language: ["vi", "en"],
-        docsRouteBasePath: "/",
+        language: ['vi', 'en'],
+        docsRouteBasePath: '/',
         highlightSearchTermsOnTargetPage: true,
       },
     ],
   ],
 
   themeConfig: {
-    image: 'img/docusaurus-social-card.jpg',
+    image: 'img/brand/social-card.jpg',
     colorMode: {
       respectPrefersColorScheme: true,
     },
 
-    // THANH MENU TRÊN CÙNG (NAVBAR)
     navbar: {
-      title: 'S-Safe Documentation', // Tên hiển thị
+      title: 'Documentation',
       logo: {
-        alt: 'S-Safe Logo',
-        src: 'img/S-Safe_logo.png', // Tên file logo chính thức của bác
+        alt: 'S-Safe',
+        src: 'img/brand/logo-s-safe.png',
+        srcDark: 'img/brand/logo-s-safe-white.png',
+        height: 34,
       },
       items: [
         {
           to: '/export',
           label: currentLocale === 'en' ? 'Download PDF' : 'Tải PDF',
           position: 'right',
+          className: 'navbar-pdf-link',
         },
         {
-          type: 'localeDropdown', // Nút chuyển Tiếng Việt / Tiếng Anh
+          type: 'localeDropdown',
           position: 'right',
         },
       ],
@@ -92,8 +103,7 @@ const config: Config = {
       theme: prismThemes.github,
       darkTheme: prismThemes.dracula,
     },
-  } satisfies
-    Preset.ThemeConfig,
+  } satisfies Preset.ThemeConfig,
 };
 
 export default config;

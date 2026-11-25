@@ -1,340 +1,591 @@
 @import './print.css';
 
-/* ======================================================== */
-/* THƯƠNG HIỆU: MÀU CHỦ ĐẠO LẤY TỪ LOGO S-SAFE (XANH DƯƠNG)  */
-/* Thay cho màu xanh lá mặc định của Docusaurus             */
-/* ======================================================== */
-
+/* ---------- Design tokens (đồng bộ website S-Safe) ---------- */
 :root {
-  --ifm-color-primary: #2f5aa5;
-  --ifm-color-primary-dark: #284d8c;
-  --ifm-color-primary-darker: #23447c;
-  --ifm-color-primary-darkest: #1c3663;
-  --ifm-color-primary-light: #4e73b3;
-  --ifm-color-primary-lighter: #6d8cc0;
-  --ifm-color-primary-lightest: #97acd2;
+  --ssafe-blue: #0060f0;
+  --ssafe-cyan: #40d0ff;
+  --ssafe-navy: #103070;
+  --ssafe-text: #1d2a44;
+  --ssafe-muted: #5b6b86;
+  --ssafe-line: #e3e8f0;
+  --ssafe-soft: #f4f7fc;
+  --ssafe-surface: #ffffff;
+  --ssafe-shadow: 0 1px 2px rgba(16, 48, 112, 0.06), 0 4px 14px rgba(16, 48, 112, 0.06);
+  --ssafe-shadow-lg: 0 2px 4px rgba(16, 48, 112, 0.08), 0 14px 34px rgba(16, 48, 112, 0.14);
+  --ssafe-radius: 10px;
+  --ssafe-radius-lg: 16px;
+  --ssafe-font-ui: 'Geist', 'Google Sans', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  --ssafe-font-heading: 'Google Sans Flex', 'Google Sans', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
 
-  --ifm-font-family-base: 'Be Vietnam Pro', system-ui, -apple-system, 'Segoe UI',
-    Roboto, sans-serif;
+  --ifm-color-primary: #0060f0;
+  --ifm-color-primary-dark: #0057d8;
+  --ifm-color-primary-darker: #0053cc;
+  --ifm-color-primary-darkest: #0044a8;
+  --ifm-color-primary-light: #146ef2;
+  --ifm-color-primary-lighter: #2878f3;
+  --ifm-color-primary-lightest: #5593f6;
+
+  --ifm-font-family-base: 'Google Sans', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  --ifm-heading-font-family: var(--ssafe-font-heading);
+  --ifm-heading-font-weight: 400;
+  --ifm-heading-color: var(--ssafe-navy);
+  --ifm-font-color-base: var(--ssafe-text);
+  --ifm-line-height-base: 1.7;
+  --ifm-global-radius: var(--ssafe-radius);
+  --ifm-background-color: #ffffff;
+  --ifm-background-surface-color: #ffffff;
+  --ifm-navbar-background-color: rgba(255, 255, 255, 0.82);
+  --ifm-navbar-shadow: none;
+  --ifm-navbar-height: 4rem;
+  --ifm-toc-border-color: var(--ssafe-line);
+  --ifm-table-border-color: var(--ssafe-line);
+  --ifm-table-stripe-background: transparent;
+  --ifm-table-head-background: var(--ssafe-soft);
+  --ifm-code-font-size: 88%;
+  --ifm-menu-color-background-hover: var(--ssafe-soft);
 }
 
 [data-theme='dark'] {
-  --ifm-color-primary: #5b8dd9;
-  --ifm-color-primary-dark: #4d78b8;
-  --ifm-color-primary-darker: #446aa3;
-  --ifm-color-primary-darkest: #375582;
-  --ifm-color-primary-light: #749edf;
-  --ifm-color-primary-lighter: #8cafe4;
-  --ifm-color-primary-lightest: #adc6ec;
+  --ssafe-text: #dbe5f8;
+  --ssafe-muted: #93a4c4;
+  --ssafe-line: #1f2c45;
+  --ssafe-soft: #0f1829;
+  --ssafe-surface: #111a2c;
+  --ssafe-shadow: 0 1px 2px rgba(0, 0, 0, 0.3), 0 4px 14px rgba(0, 0, 0, 0.28);
+  --ssafe-shadow-lg: 0 2px 4px rgba(0, 0, 0, 0.4), 0 14px 34px rgba(0, 0, 0, 0.45);
+
+  --ifm-color-primary: #4d94ff;
+  --ifm-color-primary-dark: #2f82ff;
+  --ifm-color-primary-darker: #2079ff;
+  --ifm-color-primary-darkest: #0062f0;
+  --ifm-color-primary-light: #6ba5ff;
+  --ifm-color-primary-lighter: #7aaeff;
+  --ifm-color-primary-lightest: #a3c8ff;
+
+  --ifm-heading-color: #eaf1ff;
+  --ifm-background-color: #0b1220;
+  --ifm-background-surface-color: #111a2c;
+  --ifm-navbar-background-color: rgba(11, 18, 32, 0.82);
+  --ifm-table-head-background: var(--ssafe-soft);
+  --ifm-menu-color-background-hover: #14203a;
 }
 
-/* ======================================================== */
-/* KHUNG ẢNH CHỤP MÀN HÌNH TRONG NỘI DUNG DOC                */
-/* ======================================================== */
-
-.markdown img {
-  border-radius: 10px;
-  border: 1px solid var(--ifm-color-emphasis-300);
-  box-shadow: 0 4px 14px rgba(15, 23, 42, 0.1);
+/* ---------- Thanh điều hướng ---------- */
+.navbar {
+  backdrop-filter: blur(14px) saturate(160%);
+  -webkit-backdrop-filter: blur(14px) saturate(160%);
+  border-bottom: 1px solid var(--ssafe-line);
+  font-family: var(--ssafe-font-ui);
 }
 
-[data-theme='dark'] .markdown img {
-  border-color: rgba(255, 255, 255, 0.12);
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.45);
+.navbar__logo img {
+  height: 34px;
+  width: auto;
 }
 
-/* ======================================================== */
-/* TRẠNG THÁI ACTIVE CỦA SIDEBAR THEO MÀU THƯƠNG HIỆU        */
-/* ======================================================== */
-
-.menu__link--active {
-  background-color: rgba(47, 90, 165, 0.1);
-  border-left: 3px solid var(--ifm-color-primary);
-  padding-left: calc(0.75rem - 3px);
-  font-weight: 600;
+.navbar__title {
+  font-family: var(--ssafe-font-ui);
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--ssafe-muted);
+  margin-left: 0.25rem;
+  padding-left: 0.85rem;
+  border-left: 1px solid var(--ssafe-line);
 }
 
-[data-theme='dark'] .menu__link--active {
-  background-color: rgba(91, 141, 217, 0.16);
+.navbar__link {
+  font-weight: 500;
 }
 
-/* ======================================================== */
-/* CUSTOM: THANH SEARCH NẰM GIỮA, TO, DÀI (CHUẨN FORM)      */
-/* ======================================================== */
+.navbar-pdf-link {
+  border: 1px solid var(--ifm-color-primary);
+  border-radius: 999px;
+  padding: 0.3rem 0.95rem !important;
+  margin-right: 0.35rem;
+  color: var(--ifm-color-primary);
+  font-size: 0.88rem;
+}
+
+.navbar-pdf-link:hover {
+  background: var(--ifm-color-primary);
+  color: #fff;
+}
 
 @media (min-width: 997px) {
-
-  /* 1. Ép thanh Navbar làm gốc tọa độ */
   .navbar__inner {
     position: relative !important;
   }
 
-  /* 2. Nhấc cụm Search bay ra chính giữa màn hình */
   .navbar__search {
     position: absolute !important;
     left: 50% !important;
     top: 50% !important;
-    /* THÊM DÒNG NÀY VÀO: Kéo nó lên giữa theo chiều dọc */
     transform: translate(-50%, -50%) !important;
-    /* SỬA LẠI DÒNG NÀY: Để nó cân bằng tuyệt đối */
     margin: 0 !important;
     display: flex;
     align-items: center;
   }
 
-  /* 3. Kéo dài và tăng chiều cao (độ rộng) cho ô nhập chữ */
   .navbar__search input {
-    width: 600px !important;
-    /* Bác tăng giảm con số này để chỉnh ĐỘ DÀI */
-    height: 46px !important;
-    /* Tăng con số này để chỉnh ĐỘ CAO (Bề rộng của thanh) */
-    font-size: 16px !important;
-    /* Chữ to lên cho cân đối với thanh to */
-    border-radius: 30px !important;
-    /* Bo tròn 2 đầu cực mượt */
-    background-color: var(--ifm-color-emphasis-100) !important;
-    padding-left: 2.5rem !important;
-    /* Chừa khoảng trống cho cái icon kính lúp */
-  }
-
-  /* 4. Giữ nguyên form khi click chuột vào (kèm hiệu ứng đổi màu nền sáng lên) */
-  .navbar__search input:focus {
-    width: 600px !important;
-    /* Phải bằng số width ở trên */
-    background-color: var(--ifm-color-emphasis-200) !important;
-    box-shadow: 0 0 0 2px var(--ifm-color-primary) !important;
-    /* Viền sáng nhẹ khi focus */
+    width: clamp(240px, 32vw, 480px);
+    height: 42px;
+    font-size: 0.95rem;
+    border-radius: 999px;
+    padding-left: 2.5rem;
   }
 }
 
-/* ======================================================== */
-/* CUSTOM: ĐỔI MÀU NỀN THANH SEARCH ĐỘC LẬP VỚI NAVBAR      */
-/* ======================================================== */
-
-/* 1. Ép nền thanh Search thành màu TRẮNG trong giao diện Sáng */
-html[data-theme='light'] .navbar__search input {
-  background-color: #ffffff !important;
-  border: 1px solid #d1d5db !important;
-  /* Thêm cái viền mỏng cho nó nét */
+.navbar__search input {
+  background-color: var(--ssafe-soft);
+  border: 1px solid var(--ssafe-line);
+  color: var(--ssafe-text);
+  font-family: var(--ssafe-font-ui);
 }
 
-/* 2. Ép nền thanh Search thành màu XÁM ĐẬM trong giao diện Tối */
-html[data-theme='dark'] .navbar__search input {
-  background-color: #2b2d31 !important;
-  border: 1px solid #404249 !important;
+.navbar__search input:focus {
+  background-color: var(--ssafe-surface);
+  box-shadow: 0 0 0 3px rgba(0, 96, 240, 0.18);
+  border-color: var(--ifm-color-primary);
 }
 
-/* Khi click vào ô Search, nó sáng lên một chút */
-html[data-theme='light'] .navbar__search input:focus {
-  background-color: #ffffff !important;
-  box-shadow: 0 0 0 2px var(--ifm-color-primary) !important;
-}
-
-html[data-theme='dark'] .navbar__search input:focus {
-  background-color: #383a40 !important;
-  box-shadow: 0 0 0 2px var(--ifm-color-primary) !important;
-}
-
-/* ======================================================== */
-/* CUSTOM: MÀU NỀN NAVBAR & SIDEBAR                         */
-/* ======================================================== */
-
-/* 1. Đổi màu nền Navbar (Thanh menu trên cùng) */
-:root {
-  --ifm-navbar-background-color: #f3f5f9 !important;
-  /* Xám xanh nhạt */
-}
-
-[data-theme='dark'] {
-  --ifm-navbar-background-color: #1a1b1e !important;
-  /* Màu cho Darkmode */
-}
-
-/* 2. Đổi màu nền Sidebar (Thanh menu bên trái) */
+/* ---------- Thanh bên ---------- */
 .theme-doc-sidebar-container {
-  background-color: #f3f5f9 !important;
-  border-right: 1px solid #e5e7eb;
-  /* Thêm đường kẻ chỉ mỏng ngăn cách với nội dung */
+  border-right: 1px solid var(--ssafe-line) !important;
+  background: var(--ifm-background-color);
 }
 
-[data-theme='dark'] .theme-doc-sidebar-container {
-  background-color: #1a1b1e !important;
-  border-right: 1px solid #2d2d2d;
+.theme-doc-sidebar-menu {
+  font-family: var(--ssafe-font-ui);
 }
 
-/* ======================================================== */
-/* TRANG TRÍ TIÊU ĐỀ PHÂN NHÓM SIDEBAR (SỬA ĐỔI THEO YÊU CẦU)*/
-/* ======================================================== */
-
-/* 1. Xóa bỏ khoảng cách mặc định của khung bọc ngoài Docusaurus để ép sát lề */
-.theme-doc-sidebar-item-html {
-  padding-left: 0 !important;
-  margin-left: 0 !important;
+.menu {
+  padding: 1rem 0.75rem 2rem !important;
 }
 
-/* 2. Cấu hình lại kiểu chữ cho Tiêu đề phân nhóm */
-.sidebar-divider {
-  font-size: 0.75rem !important;
-  /* CHỖ CHỈNH CHỮ NHỎ: Giảm từ 0.85rem xuống 0.75rem (hoặc 11px) */
-  font-weight: 700 !important;
-  /* Độ đậm của chữ, giữ nguyên cho rõ ràng */
-  color: #64748b !important;
-  /* Màu xám nhã nhặn */
-
-  text-transform: none !important;
-  /* CHỖ BỎ VIẾT HOA: Đổi từ uppercase thành none */
-
-  padding: 10px 0px 0px 0px !important;
-  display: block !important;
-  letter-spacing: 0.5px !important;
+.menu__list .menu__list {
+  padding-left: 0;
+  margin-top: 0.15rem;
 }
 
-/* =======================================================
-   CẤU HÌNH GIAO DIỆN MENU VÀ ICON BẰNG MÃ SVG NGUYÊN CHẤT
-   ======================================================= */
+.menu__list-item:not(:first-child) {
+  margin-top: 0.12rem;
+}
 
-/* Ép dòng menu dùng Flexbox để khóa chặt Icon và Chữ */
+.theme-doc-sidebar-item-category-level-1 + .theme-doc-sidebar-item-category-level-1 {
+  margin-top: 0.9rem;
+}
+
+/* Tiêu đề nhóm: đậm, rõ, có mũi tên thu gọn */
+.theme-doc-sidebar-menu .menu__list-item-collapsible > .menu__link {
+  padding: 0.5rem 0.65rem;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--ssafe-navy);
+}
+
+[data-theme='dark'] .theme-doc-sidebar-menu .menu__list-item-collapsible > .menu__link {
+  color: #eaf1ff;
+}
+
+.theme-doc-sidebar-menu .menu__link--sublist-caret::after {
+  opacity: 0.75;
+  background-size: 1.6rem 1.6rem;
+}
+
 .menu__link {
-  display: flex !important;
-  align-items: center !important;
+  display: flex;
+  align-items: center;
+  padding: 0.45rem 0.65rem;
+  border-radius: 8px;
+  font-size: 0.92rem;
+  color: var(--ssafe-text);
 }
 
-/* CHÚ Ý: Mũi tên (>) sẽ bắn thẳng icon vào đúng dòng chữ bên trong vỏ bọc */
-/* Định khuôn hộp chứa Icon cho TẤT CẢ các mục */
-[class*="icon-"]>.menu__link::before,
-[class*="icon-"]>.menu__list-item-collapsible>.menu__link::before {
-  content: "" !important;
-  display: inline-block !important;
-  width: 18px !important;
-  height: 18px !important;
-  margin-right: 12px !important;
-  background-size: contain !important;
-  background-repeat: no-repeat !important;
-  background-position: center !important;
-  flex-shrink: 0 !important;
+/* Mục đang chọn: khối xanh đặc, chữ trắng */
+.menu__link--active:not(.menu__link--sublist) {
+  background: linear-gradient(135deg, #0060f0, #1a78ff);
+  color: #fff;
+  font-weight: 500;
+  box-shadow: 0 4px 12px rgba(0, 96, 240, 0.3);
 }
 
-/* 1. Yêu cầu hệ thống - icon gốc phần mềm */
-.icon-he-thong>.menu__link::before,
-.icon-he-thong>.menu__list-item-collapsible>.menu__link::before {
-  background-image: url("/img/product-icons/tab/system-requirements_icon_tab.png") !important;
+[data-theme='dark'] .menu__link--active:not(.menu__link--sublist) {
+  background: linear-gradient(135deg, #1766e8, #2f82ff);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
 }
 
-/* 2. Hướng dẫn cài đặt - icon gốc phần mềm */
-.icon-cai-dat>.menu__link::before,
-.icon-cai-dat>.menu__list-item-collapsible>.menu__link::before {
-  background-image: url("/img/product-icons/tab/installation_icon_tab.png") !important;
+/* Cột icon cố định 24px cho mọi mục: chữ luôn thẳng hàng */
+.theme-doc-sidebar-menu li[class*='icon-'] > .menu__link::before {
+  content: '';
+  flex: none;
+  width: 24px;
+  height: 24px;
+  margin-right: 0.65rem;
+  border-radius: 7px;
+  background-size: 18px 18px;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
-/* 3. Giới thiệu Trang chủ - icon gốc phần mềm */
-.icon-sach>.menu__link::before,
-.icon-sach>.menu__list-item-collapsible>.menu__link::before {
-  background-image: url("/img/product-icons/tab/trang-chu_icon_tab.png") !important;
+.theme-doc-sidebar-menu li[class*='icon-'] > .menu__link--active::before {
+  background-color: #fff;
 }
 
-/* 4. Con chip (Quản lý Bộ điều khiển) - icon gốc phần mềm */
-.icon-chip>.menu__link::before,
-.icon-chip>.menu__list-item-collapsible>.menu__link::before {
-  background-image: url("/img/product-icons/tab/controller_icon_tab.png") !important;
+/* Mục chưa có icon: chấm tròn nằm đúng cột icon */
+.icon-he-thong > .menu__link::before,
+.icon-cai-dat > .menu__link::before,
+.icon-sach > .menu__link::before,
+.icon-thang-may > .menu__link::before {
+  background-size: 100% 100% !important;
+  background-image: radial-gradient(circle at center, var(--ssafe-muted) 0 2.5px, transparent 3px);
 }
 
-/* 5. Cái cửa (Quản lý Cửa) - icon gốc phần mềm */
-.icon-cua>.menu__link::before,
-.icon-cua>.menu__list-item-collapsible>.menu__link::before {
-  background-image: url("/img/product-icons/tab/door_icon_tab.png") !important;
+.icon-he-thong > .menu__link--active::before,
+.icon-cai-dat > .menu__link--active::before,
+.icon-sach > .menu__link--active::before,
+.icon-thang-may > .menu__link--active::before {
+  background-color: transparent !important;
+  background-image: radial-gradient(circle at center, #fff 0 2.5px, transparent 3px);
 }
 
-/* 6. Camera - icon gốc phần mềm */
-.icon-camera>.menu__link::before,
-.icon-camera>.menu__list-item-collapsible>.menu__link::before {
-  background-image: url("/img/product-icons/tab/camera_icon_tab.png") !important;
+.icon-chip > .menu__link::before { background-image: url('/img/icons/bo-dieu-khien.webp'); }
+.icon-cua > .menu__link::before { background-image: url('/img/icons/quan-ly-cua.webp'); }
+.icon-camera > .menu__link::before { background-image: url('/img/icons/quan-ly-camera.webp'); }
+.icon-tai-khoan > .menu__link::before { background-image: url('/img/icons/quan-ly-tai-khoan.webp'); }
+.icon-the-nhan-su > .menu__link::before { background-image: url('/img/icons/nguoi-dung-the.webp'); }
+.icon-nhom-the > .menu__link::before { background-image: url('/img/icons/nhom-dung-the.webp'); }
+.icon-khach > .menu__link::before { background-image: url('/img/icons/quan-ly-khach-vang-lai.webp'); }
+.icon-quy-tac > .menu__link::before { background-image: url('/img/icons/quy-tac-truy-cap.webp'); }
+.icon-lich > .menu__link::before { background-image: url('/img/icons/lich-truy-cap.webp'); }
+.icon-vung > .menu__link::before { background-image: url('/img/icons/quan-ly-vung.webp'); }
+.icon-cham-cong > .menu__link::before { background-image: url('/img/icons/cham-cong.webp'); }
+.icon-bao-cao > .menu__link::before { background-image: url('/img/icons/bao-cao.webp'); }
+.icon-audit-trail > .menu__link::before { background-image: url('/img/icons/audit-trail.webp'); }
+.icon-giam-sat > .menu__link::before { background-image: url('/img/icons/giam-sat-su-kien.webp'); }
+.icon-bao-dong > .menu__link::before { background-image: url('/img/icons/bao-dong.webp'); }
+.icon-hang-rao > .menu__link::before { background-image: url('/img/icons/hang-rao-dien-tu.webp'); }
+.icon-tu-dong-hoa > .menu__link::before { background-image: url('/img/icons/tu-dong-hoa.webp'); }
+.icon-canh-bao > .menu__link::before { background-image: url('/img/icons/canh-bao.webp'); }
+
+/* ---------- Nội dung bài ---------- */
+[class*='docItemContainer'] {
+  max-width: 760px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-/* 7. Thang máy - icon gốc phần mềm */
-.icon-thang-may>.menu__link::before,
-.icon-thang-may>.menu__list-item-collapsible>.menu__link::before {
-  background-image: url("/img/product-icons/tab/elevator_icon_tab.png") !important;
+.theme-doc-markdown {
+  font-size: 1.0625rem;
+  line-height: 1.8;
 }
 
-/* 8. Tài khoản (Quản trị) - icon gốc phần mềm */
-.icon-tai-khoan>.menu__link::before,
-.icon-tai-khoan>.menu__list-item-collapsible>.menu__link::before {
-  background-image: url("/img/product-icons/tab/admin_icon_tab.png") !important;
+.theme-doc-markdown h1 {
+  font-size: 2.4rem;
+  line-height: 1.2;
+  margin-bottom: 1.25rem;
 }
 
-/* 9. Người dùng thẻ - icon gốc phần mềm */
-.icon-the-nhan-su .menu__link::before {
-  background-image: url("/img/product-icons/tab/cardholder_icon_tab.png") !important;
+.theme-doc-markdown h2 {
+  font-size: 1.7rem;
+  line-height: 1.3;
+  margin-top: 2.6rem;
+  margin-bottom: 0.9rem;
 }
 
-/* 10. Nhóm dùng thẻ - icon gốc phần mềm */
-.icon-nhom-the .menu__link::before {
-  background-image: url("/img/product-icons/tab/cardholdergroup_icon_tab.png") !important;
+.theme-doc-markdown h3 {
+  font-size: 1.3rem;
+  margin-top: 2rem;
 }
 
-/* 11. Khách vãng lai - icon gốc phần mềm */
-.icon-khach .menu__link::before {
-  background-image: url("/img/product-icons/tab/visitor_icon_tab.png") !important;
+.theme-doc-markdown p,
+.theme-doc-markdown li {
+  color: var(--ssafe-text);
 }
 
-/* 12. Quy tắc truy cập - icon gốc phần mềm */
-.icon-quy-tac .menu__link::before {
-  background-image: url("/img/product-icons/tab/accessrule_icon_tab.png") !important;
+.theme-doc-markdown a:not(.hash-link) {
+  text-decoration: underline;
+  text-decoration-color: rgba(0, 96, 240, 0.35);
+  text-underline-offset: 3px;
 }
 
-/* 13. Lịch truy cập - icon gốc phần mềm */
-.icon-lich .menu__link::before {
-  background-image: url("/img/product-icons/tab/schedule_icon_tab.png") !important;
+.theme-doc-markdown strong {
+  font-weight: 700;
 }
 
-/* 14. Quản lý Vùng (Area) - icon gốc phần mềm */
-.icon-vung .menu__link::before {
-  background-image: url("/img/product-icons/tab/area_icon_tab.png") !important;
+.breadcrumbs__link {
+  background: var(--ssafe-soft);
+  font-family: var(--ssafe-font-ui);
+  font-size: 0.8rem;
 }
 
-
-/* 15. Quản lý Chấm công - icon gốc phần mềm */
-.icon-cham-cong .menu__link::before {
-  background-image: url("/img/product-icons/tab/time_attendance_icon_tab.png") !important;
+/* Mã nội dòng dạng viên thuốc */
+.theme-doc-markdown :not(pre) > code {
+  font-family: var(--ssafe-font-ui);
+  font-size: 0.82em;
+  font-weight: 500;
+  padding: 0.14em 0.65em;
+  border: 0;
+  border-radius: 999px;
+  background: rgba(0, 96, 240, 0.09);
+  color: var(--ifm-color-primary-darker);
 }
 
-/* 16. Báo cáo - icon gốc phần mềm */
-.icon-bao-cao .menu__link::before {
-  background-image: url("/img/product-icons/tab/reports_icon_tab.png") !important;
+[data-theme='dark'] .theme-doc-markdown :not(pre) > code {
+  background: rgba(77, 148, 255, 0.16);
+  color: #a3c8ff;
 }
 
-/* 17. Giám sát sự kiện - icon gốc phần mềm */
-.icon-giam-sat .menu__link::before {
-  background-image: url("/img/product-icons/tab/eventlog_icon_tab.png") !important;
+/* Danh sách bước đánh số dạng vòng tròn */
+.theme-doc-markdown ol {
+  list-style: none;
+  counter-reset: ssafe-step;
+  padding-left: 0;
 }
 
-/* 18. Quản lý Báo động (Alarm) - icon gốc phần mềm */
-.icon-bao-dong .menu__link::before {
-  background-image: url("/img/product-icons/tab/alarm_setup_icon_tab.png") !important;
+.theme-doc-markdown ol > li {
+  counter-increment: ssafe-step;
+  position: relative;
+  padding-left: 2.75rem;
+  margin-bottom: 1rem;
+  min-height: 2rem;
 }
 
-/* 19. Tự động hóa (Automation) - icon gốc phần mềm */
-.icon-tu-dong-hoa .menu__link::before {
-  background-image: url("/img/product-icons/tab/automation_icon_tab.png") !important;
+.theme-doc-markdown ol > li::before {
+  content: counter(ssafe-step);
+  position: absolute;
+  left: 0;
+  top: 0.15rem;
+  display: grid;
+  place-items: center;
+  width: 1.95rem;
+  height: 1.95rem;
+  border-radius: 50%;
+  background: var(--ifm-color-primary);
+  color: #fff;
+  font-family: var(--ssafe-font-ui);
+  font-size: 0.85rem;
+  font-weight: 600;
+  line-height: 1;
 }
 
-/* 20. Cảnh báo (Alert) - icon gốc phần mềm */
-.icon-canh-bao .menu__link::before {
-  background-image: url("/img/product-icons/tab/alarm_monitoring_icon_tab.png") !important;
+.theme-doc-markdown ol[start='2'] { counter-reset: ssafe-step 1; }
+.theme-doc-markdown ol[start='3'] { counter-reset: ssafe-step 2; }
+.theme-doc-markdown ol[start='4'] { counter-reset: ssafe-step 3; }
+.theme-doc-markdown ol[start='5'] { counter-reset: ssafe-step 4; }
+.theme-doc-markdown ol[start='6'] { counter-reset: ssafe-step 5; }
+.theme-doc-markdown ol[start='7'] { counter-reset: ssafe-step 6; }
+.theme-doc-markdown ol[start='8'] { counter-reset: ssafe-step 7; }
+.theme-doc-markdown ol[start='9'] { counter-reset: ssafe-step 8; }
+.theme-doc-markdown ol[start='10'] { counter-reset: ssafe-step 9; }
+.theme-doc-markdown ol[start='11'] { counter-reset: ssafe-step 10; }
+.theme-doc-markdown ol[start='12'] { counter-reset: ssafe-step 11; }
+
+/* Bảng kẻ mảnh, tiêu đề nền xám nhạt */
+.theme-doc-markdown table {
+  display: table;
+  width: 100%;
+  margin: 1.5rem 0;
+  border-collapse: separate;
+  border-spacing: 0;
+  border: 1px solid var(--ssafe-line);
+  border-radius: var(--ssafe-radius);
+  overflow: hidden;
+  font-size: 0.95rem;
 }
 
-/* 21. Hàng rào điện tử - icon gốc phần mềm */
-.icon-hang-rao .menu__link::before {
-  background-image: url("/img/product-icons/tab/geofence_icon_tab.png") !important;
+.theme-doc-markdown table th,
+.theme-doc-markdown table td {
+  padding: 0.7rem 0.95rem;
+  border: 0;
+  border-bottom: 1px solid var(--ssafe-line);
+  vertical-align: top;
 }
 
-/* 22. Audit Trail - Nhật ký hệ thống - icon gốc phần mềm */
-.icon-audit-trail .menu__link::before {
-  background-image: url("/img/product-icons/tab/audittrail_icon_tab.png") !important;
+.theme-doc-markdown table th {
+  background: var(--ssafe-soft);
+  font-family: var(--ssafe-font-ui);
+  font-size: 0.82rem;
+  font-weight: 600;
+  text-align: left;
+  color: var(--ssafe-muted);
 }
 
-/* Icon Module chức năng - Hình lưới (Grid) màu xanh dương */
-.icon-module>.menu__link::before,
-.icon-module>.menu__list-item-collapsible>.menu__link::before {
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%230984e3' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect x='3' y='3' width='7' height='7' rx='1'/%3E%3Crect x='14' y='3' width='7' height='7' rx='1'/%3E%3Crect x='14' y='14' width='7' height='7' rx='1'/%3E%3Crect x='3' y='14' width='7' height='7' rx='1'/%3E%3C/svg%3E") !important;
+.theme-doc-markdown table tr:last-child td {
+  border-bottom: 0;
+}
+
+.theme-doc-markdown table tr {
+  background: transparent !important;
+}
+
+@media (max-width: 576px) {
+  .theme-doc-markdown table th,
+  .theme-doc-markdown table td {
+    padding: 0.55rem 0.6rem;
+    font-size: 0.88rem;
+    overflow-wrap: anywhere;
+  }
+}
+
+.theme-doc-markdown img {
+  max-width: 100%;
+  height: auto;
+}
+
+.theme-doc-markdown pre {
+  border-radius: var(--ssafe-radius);
+}
+
+/* Khung lưu ý */
+.theme-admonition {
+  --ifm-alert-border-width: 1px;
+  --ifm-alert-shadow: none;
+  --ifm-alert-border-radius: 12px;
+  --ifm-alert-padding-vertical: 1rem;
+  --ifm-alert-padding-horizontal: 1.25rem;
+  margin: 1.5rem 0;
+  border-left-width: 4px;
+  font-size: 0.98rem;
+}
+
+.theme-admonition [class*='admonitionHeading'] {
+  font-family: var(--ssafe-font-ui);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+}
+
+.theme-admonition p:last-child,
+.theme-admonition ul:last-child {
+  margin-bottom: 0;
+}
+
+.theme-admonition-note {
+  --ifm-alert-background-color: #f1f5fb;
+  --ifm-alert-border-color: #7c8db0;
+  --ifm-alert-foreground-color: #2c3a59;
+}
+
+.theme-admonition-info {
+  --ifm-alert-background-color: #eaf8ff;
+  --ifm-alert-border-color: #2fb6e8;
+  --ifm-alert-foreground-color: #0d4a66;
+}
+
+.theme-admonition-tip {
+  --ifm-alert-background-color: #eaf9f1;
+  --ifm-alert-border-color: #1fa869;
+  --ifm-alert-foreground-color: #0f5a38;
+}
+
+.theme-admonition-warning,
+.theme-admonition-caution {
+  --ifm-alert-background-color: #fff6e3;
+  --ifm-alert-border-color: #f0a30a;
+  --ifm-alert-foreground-color: #6b4600;
+}
+
+.theme-admonition-danger {
+  --ifm-alert-background-color: #fff0f0;
+  --ifm-alert-border-color: #e5484d;
+  --ifm-alert-foreground-color: #7a1d20;
+}
+
+[data-theme='dark'] .theme-admonition-note {
+  --ifm-alert-background-color: #141f35;
+  --ifm-alert-foreground-color: #c6d3ee;
+}
+
+[data-theme='dark'] .theme-admonition-info {
+  --ifm-alert-background-color: #0d2230;
+  --ifm-alert-foreground-color: #b8e8fb;
+}
+
+[data-theme='dark'] .theme-admonition-tip {
+  --ifm-alert-background-color: #0e2519;
+  --ifm-alert-foreground-color: #b5ecd0;
+}
+
+[data-theme='dark'] .theme-admonition-warning,
+[data-theme='dark'] .theme-admonition-caution {
+  --ifm-alert-background-color: #2a200a;
+  --ifm-alert-foreground-color: #fbe3a8;
+}
+
+[data-theme='dark'] .theme-admonition-danger {
+  --ifm-alert-background-color: #2a1213;
+  --ifm-alert-foreground-color: #fbc5c7;
+}
+
+/* ---------- Mục lục bên phải ---------- */
+.table-of-contents {
+  font-family: var(--ssafe-font-ui);
+  font-size: 0.82rem;
+  padding: 0 0 0 0.9rem;
+}
+
+.table-of-contents__link {
+  color: var(--ssafe-muted);
+}
+
+.table-of-contents__link--active,
+.table-of-contents__link:hover {
+  color: var(--ifm-color-primary);
+}
+
+/* ---------- Bài trước / bài tiếp ---------- */
+.pagination-nav {
+  margin-top: 3.5rem;
+  gap: 1rem;
+}
+
+.pagination-nav__link {
+  padding: 1.25rem 1.5rem;
+  border: 1px solid var(--ssafe-line);
+  border-radius: var(--ssafe-radius-lg);
+  background: var(--ssafe-surface);
+  box-shadow: var(--ssafe-shadow);
+  transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
+}
+
+.pagination-nav__link:hover {
+  transform: translateY(-2px);
+  border-color: var(--ifm-color-primary);
+  box-shadow: var(--ssafe-shadow-lg);
+}
+
+.pagination-nav__sublabel {
+  font-family: var(--ssafe-font-ui);
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  color: var(--ssafe-muted);
+}
+
+.pagination-nav__label {
+  font-family: var(--ssafe-font-heading);
+  font-size: 1.15rem;
+  font-weight: 400;
+  color: var(--ifm-color-primary);
+}
+
+/* ---------- Màn hình nhỏ ---------- */
+@media (max-width: 576px) {
+  .theme-doc-markdown {
+    font-size: 1rem;
+  }
+
+  .theme-doc-markdown h1 {
+    font-size: 1.9rem;
+  }
+
+  .theme-doc-markdown h2 {
+    font-size: 1.45rem;
+  }
+
+  .pagination-nav__link {
+    padding: 1rem 1.15rem;
+  }
 }

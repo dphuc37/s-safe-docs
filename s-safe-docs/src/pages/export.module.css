@@ -25,17 +25,17 @@
 .card {
   display: flex;
   flex-direction: column;
-  border: 1px solid var(--ifm-color-emphasis-300);
-  border-radius: 10px;
+  border: 1px solid var(--ssafe-line);
+  border-radius: var(--ssafe-radius-lg);
   overflow: hidden;
-  background: var(--ifm-background-surface-color);
-  box-shadow: 0 1px 3px rgba(15, 23, 42, 0.06);
+  background: var(--ssafe-surface);
+  box-shadow: var(--ssafe-shadow);
 }
 
 /* Card ghép nhiều sub-section (VD: Cấu hình hệ thống + Hướng dẫn sử dụng) -
    mỗi section vẫn có header/list riêng, ngăn cách bằng đường kẻ mảnh. */
 .card > .groupHeader ~ .groupHeader {
-  border-top: 1px solid var(--ifm-color-emphasis-300);
+  border-top: 1px solid var(--ssafe-line);
 }
 
 .groupHeader {
@@ -44,8 +44,8 @@
   justify-content: space-between;
   gap: 1rem;
   padding: 0.65rem 0.9rem;
-  background: var(--ifm-color-emphasis-100);
-  border-bottom: 1px solid var(--ifm-color-emphasis-300);
+  background: var(--ssafe-soft);
+  border-bottom: 1px solid var(--ssafe-line);
 }
 
 .groupHeader strong {

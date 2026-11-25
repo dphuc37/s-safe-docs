@@ -12,13 +12,27 @@
     max-width: 720px;
     margin: 0 auto;
     color: #111;
-    font-family: 'Be Vietnam Pro', system-ui, sans-serif;
+    font-family: 'Google Sans', system-ui, sans-serif;
   }
 
   #pdf-export-print-root .pdf-cover {
     page-break-after: always;
-    padding-top: 30vh;
+    padding-top: 22vh;
     text-align: center;
+  }
+
+  #pdf-export-print-root .pdf-cover-logo {
+    display: block;
+    width: 240px;
+    margin: 0 auto 2.5rem;
+  }
+
+  #pdf-export-print-root h1,
+  #pdf-export-print-root h2,
+  #pdf-export-print-root h3 {
+    font-family: 'Google Sans Flex', 'Google Sans', system-ui, sans-serif;
+    font-weight: 400;
+    color: #103070;
   }
 
   #pdf-export-print-root .pdf-cover ul {
@@ -29,6 +43,14 @@
 
   #pdf-export-print-root .pdf-doc-section {
     page-break-before: always;
+  }
+
+  #pdf-export-print-root button {
+    display: block;
+    width: 100%;
+    padding: 0;
+    border: 0;
+    background: none;
   }
 
   #pdf-export-print-root img {
