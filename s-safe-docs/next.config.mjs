@@ -11,6 +11,8 @@ const config = {
     return [
       { source: '/', destination: '/yeu-cau-he-thong', permanent: false },
       { source: '/en', destination: '/en/yeu-cau-he-thong', permanent: false },
+      { source: '/huong-dan-su-dung/trang-chu', destination: '/trang-chu', permanent: true },
+      { source: '/en/huong-dan-su-dung/trang-chu', destination: '/en/trang-chu', permanent: true },
     ];
   },
 };
