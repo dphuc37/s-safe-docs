@@ -52,6 +52,7 @@
 
 html {
   scrollbar-gutter: stable;
+  font-size: 112.5%;
 }
 
 :root {
@@ -87,7 +88,7 @@ body {
 
 #nd-page .prose,
 #nd-page [data-doc-content] {
-  font-size: 1.0625rem;
+  font-size: 1rem;
   line-height: 1.8;
 }
 
@@ -288,11 +289,19 @@ header {
 /* Nội dung căn giữa, cột mục lục lùi vào cho cân đối */
 #nd-page > * {
   width: 100%;
-  max-width: 760px;
+  max-width: 920px;
   margin-inline: auto;
 }
 
+@media (min-width: 768px) {
+  #nd-notebook-layout,
+  [class*='--fd-sidebar-width:268px'] {
+    --fd-sidebar-width: 292px;
+  }
+}
+
 #nd-toc {
+  --fd-toc-width: 280px;
   margin-inline-start: -2rem;
 }
 
