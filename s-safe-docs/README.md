@@ -1,41 +1,31 @@
-# Website
+# S-Safe Documentation
 
-This website is built using [Docusaurus](https://docusaurus.io/), a modern static website generator.
+Trang tài liệu hướng dẫn S-Safe, xây dựng bằng [Fumadocs](https://fumadocs.dev) trên Next.js. Hỗ trợ tiếng Việt (mặc định, không có tiền tố) và tiếng Anh (`/en`).
 
-## Installation
-
-```bash
-yarn
-```
-
-## Local Development
+## Chạy trên máy
 
 ```bash
-yarn start
+npm install
+npm run dev
 ```
 
-This command starts a local development server and opens up a browser window. Most changes are reflected live without having to restart the server.
+Mở `http://localhost:3000`.
 
 ## Build
 
 ```bash
-yarn build
+npm run build
+npm run start
 ```
 
-This command generates static content into the `build` directory and can be served using any static contents hosting service.
+## Cấu trúc
 
-## Deployment
+- `content/docs/<nhóm>/<trang>.mdx`: nội dung tiếng Việt; `<trang>.en.mdx`: bản tiếng Anh.
+- `content/docs/<nhóm>/meta.json` và `meta.en.json`: tên nhóm và thứ tự trang trong thanh bên.
+- URL được giữ như cũ: `/yeu-cau-he-thong`, `/installation`, `/huong-dan-su-dung/<trang>` (xem `slugs` trong `src/lib/source.ts`).
+- `public/img/`: ảnh chụp phần mềm, logo (`brand/`) và icon thanh bên (`icons/`).
+- `src/app/[lang]/(site)/export`: trang xuất tài liệu ra PDF (chọn trang, gộp, in ra PDF bằng trình duyệt).
 
-Using SSH:
+## Triển khai (Vercel)
 
-```bash
-USE_SSH=true yarn deploy
-```
-
-Not using SSH:
-
-```bash
-GIT_USER=<Your GitHub username> yarn deploy
-```
-
-If you are using GitHub pages for hosting, this command is a convenient way to build the website and push to the `gh-pages` branch.
+Framework Preset của project Vercel phải là **Next.js**. Thư mục gốc (Root Directory) là `s-safe-docs`.

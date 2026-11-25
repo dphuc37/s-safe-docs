@@ -1,0 +1,9 @@
+{
+  "title": "System Setup",
+  "defaultOpen": true,
+  "pages": [
+    "trang-chu",
+    "yeu-cau-he-thong",
+    "installation"
+  ]
+}

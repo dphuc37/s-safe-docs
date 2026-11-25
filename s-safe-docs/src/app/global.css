@@ -1,0 +1,302 @@
+@import 'tailwindcss';
+@import 'fumadocs-ui/css/neutral.css';
+@import 'fumadocs-ui/css/preset.css';
+
+@theme {
+  --font-sans: 'Google Sans', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  --font-heading: 'Google Sans Flex', 'Google Sans', system-ui, sans-serif;
+  --font-ui: 'Geist', 'Google Sans', system-ui, sans-serif;
+
+  --color-fd-background: #ffffff;
+  --color-fd-foreground: #1d2a44;
+  --color-fd-muted: #f4f7fc;
+  --color-fd-muted-foreground: #5b6b86;
+  --color-fd-popover: #ffffff;
+  --color-fd-popover-foreground: #1d2a44;
+  --color-fd-card: #ffffff;
+  --color-fd-card-foreground: #1d2a44;
+  --color-fd-border: #e3e8f0;
+  --color-fd-primary: #0060f0;
+  --color-fd-primary-foreground: #ffffff;
+  --color-fd-secondary: #eef3fc;
+  --color-fd-secondary-foreground: #103070;
+  --color-fd-accent: #eef3fc;
+  --color-fd-accent-foreground: #103070;
+  --color-fd-ring: #0060f0;
+}
+
+.dark {
+  --color-fd-background: #0b1220;
+  --color-fd-foreground: #dbe5f8;
+  --color-fd-muted: #0f1829;
+  --color-fd-muted-foreground: #93a4c4;
+  --color-fd-popover: #111a2c;
+  --color-fd-popover-foreground: #dbe5f8;
+  --color-fd-card: #111a2c;
+  --color-fd-card-foreground: #dbe5f8;
+  --color-fd-border: #1f2c45;
+  --color-fd-primary: #4d94ff;
+  --color-fd-primary-foreground: #ffffff;
+  --color-fd-secondary: #14203a;
+  --color-fd-secondary-foreground: #eaf1ff;
+  --color-fd-accent: #14203a;
+  --color-fd-accent-foreground: #eaf1ff;
+  --color-fd-ring: #4d94ff;
+}
+
+.dark #nd-sidebar {
+  --color-fd-muted: #0f1829;
+  --color-fd-secondary: #14203a;
+  --color-fd-muted-foreground: #93a4c4;
+}
+
+html {
+  scrollbar-gutter: stable;
+}
+
+:root {
+  --fd-layout-width: 100%;
+}
+
+body {
+  font-family: var(--font-sans);
+}
+
+/* Tiêu đề trang: Google Sans Flex, mảnh, màu navy */
+#nd-page h1,
+#nd-page h2,
+#nd-page h3,
+#nd-page h4 {
+  font-family: var(--font-heading);
+  font-weight: 400;
+  color: #103070;
+}
+
+.dark #nd-page h1,
+.dark #nd-page h2,
+.dark #nd-page h3,
+.dark #nd-page h4 {
+  color: #eaf1ff;
+}
+
+#nd-page h1 {
+  font-size: 2.25rem;
+  line-height: 1.2;
+  margin-bottom: 1.25rem;
+}
+
+#nd-page .prose,
+#nd-page [data-doc-content] {
+  font-size: 1.0625rem;
+  line-height: 1.8;
+}
+
+/* Thanh trên / thanh bên dùng Geist */
+#nd-sidebar,
+#nd-subnav,
+header {
+  font-family: var(--font-ui);
+}
+
+.ssafe-nav-label {
+  margin-inline-start: 0.35rem;
+  padding-inline-start: 0.75rem;
+  border-inline-start: 1px solid var(--color-fd-border);
+  font-family: var(--font-ui);
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--color-fd-muted-foreground);
+}
+
+/* Cột icon cố định 22px cho mọi mục thanh bên: chữ luôn thẳng hàng */
+.ssafe-nav-icon {
+  flex: none;
+  width: 22px;
+  height: 22px;
+  object-fit: contain;
+}
+
+.ssafe-nav-dot {
+  flex: none;
+  width: 22px;
+  height: 22px;
+  background: radial-gradient(circle at center, var(--color-fd-muted-foreground) 0 2.5px, transparent 3px);
+}
+
+#nd-sidebar button .ssafe-nav-dot {
+  display: none;
+}
+
+/* Tiêu đề nhóm: đậm, in hoa nhỏ */
+#nd-sidebar button:has(> .lucide-chevron-down) {
+  font-weight: 700;
+  font-size: 0.78rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--color-fd-secondary-foreground);
+}
+
+/* Mục đang chọn: khối xanh đặc, chữ trắng */
+#nd-sidebar a[data-active='true'] {
+  background: linear-gradient(135deg, #0060f0, #1a78ff);
+  color: #ffffff;
+  font-weight: 500;
+  box-shadow: 0 4px 12px rgba(0, 96, 240, 0.3);
+}
+
+#nd-sidebar a[data-active='true']::before {
+  display: none;
+}
+
+#nd-sidebar a[data-active='true'] .ssafe-nav-icon {
+  background: #ffffff;
+  border-radius: 6px;
+  padding: 2px;
+}
+
+#nd-sidebar a[data-active='true'] .ssafe-nav-dot {
+  background: radial-gradient(circle at center, #ffffff 0 2.5px, transparent 3px);
+}
+
+.dark #nd-sidebar a[data-active='true'] {
+  background: linear-gradient(135deg, #1766e8, #2f82ff);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+/* Danh sách bước đánh số dạng vòng tròn */
+#nd-page .prose ol {
+  list-style: none;
+  counter-reset: ssafe-step;
+  padding-inline-start: 0;
+}
+
+#nd-page .prose ol > li {
+  counter-increment: ssafe-step;
+  position: relative;
+  padding-inline-start: 2.75rem;
+  min-height: 2rem;
+}
+
+#nd-page .prose ol > li::before {
+  content: counter(ssafe-step);
+  position: absolute;
+  inset-inline-start: 0;
+  top: 0.15rem;
+  display: grid;
+  place-items: center;
+  width: 1.95rem;
+  height: 1.95rem;
+  border-radius: 9999px;
+  background: var(--color-fd-primary);
+  color: #ffffff;
+  font-family: var(--font-ui);
+  font-size: 0.85rem;
+  font-weight: 600;
+  line-height: 1;
+}
+
+#nd-page .prose ol[start='2'] { counter-reset: ssafe-step 1; }
+#nd-page .prose ol[start='3'] { counter-reset: ssafe-step 2; }
+#nd-page .prose ol[start='4'] { counter-reset: ssafe-step 3; }
+#nd-page .prose ol[start='5'] { counter-reset: ssafe-step 4; }
+#nd-page .prose ol[start='6'] { counter-reset: ssafe-step 5; }
+#nd-page .prose ol[start='7'] { counter-reset: ssafe-step 6; }
+#nd-page .prose ol[start='8'] { counter-reset: ssafe-step 7; }
+#nd-page .prose ol[start='9'] { counter-reset: ssafe-step 8; }
+
+/* Xuất PDF: ẩn toàn bộ giao diện, chỉ in vùng gộp nội dung */
+#pdf-export-print-root {
+  display: none;
+}
+
+@media print {
+  body > *:not(#pdf-export-print-root) {
+    display: none !important;
+  }
+
+  #pdf-export-print-root {
+    display: block !important;
+    max-width: 720px;
+    margin: 0 auto;
+    color: #111;
+    font-family: 'Google Sans', system-ui, sans-serif;
+  }
+
+  #pdf-export-print-root .pdf-cover {
+    page-break-after: always;
+    padding-top: 22vh;
+    text-align: center;
+  }
+
+  #pdf-export-print-root .pdf-cover-logo {
+    display: block;
+    width: 240px;
+    margin: 0 auto 2.5rem;
+  }
+
+  #pdf-export-print-root .pdf-cover ul {
+    display: inline-block;
+    text-align: left;
+    margin-top: 1rem;
+  }
+
+  #pdf-export-print-root h1,
+  #pdf-export-print-root h2,
+  #pdf-export-print-root h3 {
+    font-family: 'Google Sans Flex', 'Google Sans', system-ui, sans-serif;
+    font-weight: 400;
+    color: #103070;
+  }
+
+  #pdf-export-print-root .pdf-doc-section {
+    page-break-before: always;
+  }
+
+  #pdf-export-print-root button {
+    display: block;
+    width: 100%;
+    padding: 0;
+    border: 0;
+    background: none;
+  }
+
+  #pdf-export-print-root img {
+    max-width: 100% !important;
+    height: auto !important;
+    box-shadow: none !important;
+  }
+
+  #pdf-export-print-root pre,
+  #pdf-export-print-root code {
+    background: #f6f8fa !important;
+    color: #1f2328 !important;
+    white-space: pre-wrap !important;
+    word-break: break-word;
+    border: 1px solid #d0d7de;
+  }
+
+  #pdf-export-print-root a {
+    color: inherit !important;
+    text-decoration: none !important;
+  }
+
+  @page {
+    margin: 18mm 14mm;
+  }
+}
+
+/* Nội dung căn giữa, cột mục lục lùi vào cho cân đối */
+#nd-page > * {
+  width: 100%;
+  max-width: 760px;
+  margin-inline: auto;
+}
+
+#nd-toc {
+  margin-inline-start: -2rem;
+}
+
+/* Bỏ chấm tròn chạy trên đường kẻ của mục lục */
+#nd-toc div.rounded-full {
+  display: none;
+}

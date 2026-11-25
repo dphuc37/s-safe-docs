@@ -1,0 +1,9 @@
+{
+  "title": "Cấu hình hệ thống",
+  "defaultOpen": true,
+  "pages": [
+    "trang-chu",
+    "yeu-cau-he-thong",
+    "installation"
+  ]
+}
