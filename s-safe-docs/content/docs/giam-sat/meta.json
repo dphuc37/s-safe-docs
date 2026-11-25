@@ -1,0 +1,13 @@
+{
+  "title": "Giám sát",
+  "defaultOpen": true,
+  "pages": [
+    "bao-cao",
+    "audit-trail",
+    "giam-sat-su-kien",
+    "bao-dong",
+    "hang-rao-dien-tu",
+    "tu-dong-hoa",
+    "canh-bao"
+  ]
+}

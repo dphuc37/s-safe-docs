@@ -1,0 +1,11 @@
+{
+  "title": "System",
+  "defaultOpen": true,
+  "pages": [
+    "bo-dieu-khien",
+    "quan-ly-cua",
+    "quan-ly-camera",
+    "quan-ly-thang-may",
+    "quan-ly-tai-khoan"
+  ]
+}

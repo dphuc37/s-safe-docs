@@ -1,0 +1,13 @@
+{
+  "title": "Quản lý",
+  "defaultOpen": true,
+  "pages": [
+    "nguoi-dung-the",
+    "nhom-dung-the",
+    "quan-ly-khach-vang-lai",
+    "quy-tac-truy-cap",
+    "lich-truy-cap",
+    "quan-ly-vung",
+    "cham-cong"
+  ]
+}
